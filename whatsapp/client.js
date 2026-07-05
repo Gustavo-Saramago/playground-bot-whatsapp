@@ -94,6 +94,7 @@ class WhatsAppClient {
     console.log('[WhatsApp] Inicializando cliente WhatsApp...');
 
     const chromeExecutablePath = this._resolveChromeExecutablePath();
+    console.log(`[WhatsApp] Chromium path: ${chromeExecutablePath || 'default-bundled'}`);
     const chromiumArgs = [
       '--no-sandbox',
       '--disable-setuid-sandbox',
@@ -117,7 +118,8 @@ class WhatsAppClient {
     this.client = new Client({
       authStrategy: new LocalAuth({ dataPath: this.options.authPath }),
       puppeteer: {
-        headless: 'new',
+        headless: true,
+        dumpio: true,
         args: chromiumArgs,
         ...(chromeExecutablePath ? { executablePath: chromeExecutablePath } : {}),
       },
@@ -1456,7 +1458,7 @@ class WhatsAppClient {
     const envPath = String(process.env.PUPPETEER_EXECUTABLE_PATH || '').trim();
     const isWindows = process.platform === 'win32';
 
-    if (envPath && fs.existsSync(envPath)) {
+    if (isWindows && envPath && fs.existsSync(envPath)) {
       return envPath;
     }
 
@@ -1473,6 +1475,10 @@ class WhatsAppClient {
           return candidate;
         }
       }
+    }
+
+    if (!isWindows && envPath && fs.existsSync(envPath) && envPath.startsWith('/')) {
+      return envPath;
     }
 
     const commonPaths = [
