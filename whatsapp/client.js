@@ -94,11 +94,19 @@ class WhatsAppClient {
     console.log('[WhatsApp] Inicializando cliente WhatsApp...');
 
     const chromeExecutablePath = this._resolveChromeExecutablePath();
+    const chromiumArgs = [
+      '--no-sandbox',
+      '--disable-setuid-sandbox',
+      '--disable-dev-shm-usage',
+      '--no-zygote',
+      '--disable-gpu',
+    ];
     
     this.client = new Client({
       authStrategy: new LocalAuth({ dataPath: this.options.authPath }),
       puppeteer: {
         headless: this.options.headless,
+        args: chromiumArgs,
         ...(chromeExecutablePath ? { executablePath: chromeExecutablePath } : {}),
       },
     });
