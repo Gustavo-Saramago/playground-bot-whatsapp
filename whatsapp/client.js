@@ -99,13 +99,26 @@ class WhatsAppClient {
       '--disable-setuid-sandbox',
       '--disable-dev-shm-usage',
       '--no-zygote',
+      '--single-process',
       '--disable-gpu',
+      '--disable-software-rasterizer',
+      '--disable-extensions',
+      '--disable-background-networking',
+      '--disable-background-timer-throttling',
+      '--disable-breakpad',
+      '--disable-component-update',
+      '--disable-domain-reliability',
+      '--disable-renderer-backgrounding',
+      '--disable-sync',
+      '--hide-scrollbars',
+      '--mute-audio',
+      '--window-size=1280,900',
     ];
     
     this.client = new Client({
       authStrategy: new LocalAuth({ dataPath: this.options.authPath }),
       puppeteer: {
-        headless: this.options.headless,
+        headless: 'new',
         args: chromiumArgs,
         ...(chromeExecutablePath ? { executablePath: chromeExecutablePath } : {}),
       },
@@ -1444,18 +1457,18 @@ class WhatsAppClient {
     const envPath = String(process.env.PUPPETEER_EXECUTABLE_PATH || '').trim();
     const isWindows = process.platform === 'win32';
 
-    if (isWindows && envPath && fs.existsSync(envPath)) {
+    if (envPath && fs.existsSync(envPath)) {
       return envPath;
     }
 
-    if (!isWindows && envPath) {
-      const linuxCandidates = [
-        '/usr/bin/chromium',
-        '/usr/bin/chromium-browser',
-        '/usr/bin/google-chrome',
-        '/usr/bin/google-chrome-stable',
-      ];
+    const linuxCandidates = [
+      '/usr/bin/chromium',
+      '/usr/bin/chromium-browser',
+      '/usr/bin/google-chrome',
+      '/usr/bin/google-chrome-stable',
+    ];
 
+    if (!isWindows) {
       for (const candidate of linuxCandidates) {
         if (fs.existsSync(candidate)) {
           return candidate;
