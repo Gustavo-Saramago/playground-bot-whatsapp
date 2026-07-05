@@ -31,8 +31,9 @@ class WhatsAppClient {
     this.pricingPolicy = this._loadPricingPolicy();
     this.ownerPhone = this._normalizePhone(options.ownerPhone || process.env.OWNER_PHONE || '');
     this.pairingPhoneNumber = this._normalizePhone(
-      options.pairingPhoneNumber || process.env.PAIRING_PHONE_NUMBER || process.env.OWNER_PHONE || '',
+      options.pairingPhoneNumber || process.env.PAIRING_PHONE_NUMBER || '',
     );
+    this.pairingCode = '';
     this.liveModeActive = options.liveModeActive === true;
     this.options = {
       authPath: options.authPath || path.join(__dirname, '..', '.wwebjs_auth'),
@@ -139,6 +140,8 @@ class WhatsAppClient {
 
     if (this.pairingPhoneNumber) {
       console.log(`[WhatsApp] Pareamento por código ativo para: ${this._maskPhone(this.pairingPhoneNumber)}`);
+    } else {
+      console.log('[WhatsApp] PAIRING_PHONE_NUMBER nao definida. Portal exibira QR e nao codigo numerico.');
     }
 
     // Event: QR Code (para scan inicial)
@@ -161,8 +164,9 @@ class WhatsAppClient {
     });
 
     this.client.on('code', (code) => {
+      this.pairingCode = String(code || '');
       console.log('[WhatsApp] Código de pareamento recebido:');
-      console.log(`[WhatsApp] ${code}`);
+      console.log(`[WhatsApp] ${this.pairingCode}`);
     });
 
     // Event: Pronto
@@ -3808,10 +3812,19 @@ class WhatsAppClient {
     return this.qrData;
   }
 
+  getPairingCode() {
+    return this.pairingCode;
+  }
+
+  getPairingPhoneMasked() {
+    return this._maskPhone(this.pairingPhoneNumber);
+  }
+
   getStatus() {
     return {
       ready: this.ready,
       qrGenerated: !!this.qrData,
+      pairingCodeGenerated: !!this.pairingCode,
     };
   }
 

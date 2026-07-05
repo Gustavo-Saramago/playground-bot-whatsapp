@@ -71,6 +71,7 @@ const startupHealth = {
 console.log(`[App][Health] ${JSON.stringify(startupHealth)}`);
 
 const WhatsAppClient = require('./whatsapp/client');
+const { createPairingServer } = require('./web/server');
 
 if (!String(process.env.OPENAI_API_KEY || '').trim()) {
   console.warn('[App] OPENAI_API_KEY não encontrada. Áudios vão cair no fallback até a chave ser configurada.');
@@ -144,6 +145,7 @@ const preset = PROACTIVE_PRESETS[presetName] || PROACTIVE_PRESETS.balanced;
 const app = new WhatsAppClient({
   headless: true,
   ownerPhone: process.env.OWNER_PHONE || '',
+  pairingPhoneNumber: process.env.PAIRING_PHONE_NUMBER || '',
   safeStartupMode: process.env.SAFE_STARTUP_MODE !== 'false',
   safeStartupAllowAll: process.env.SAFE_STARTUP_ALLOW_ALL === 'true',
   liveModeActive: process.env.BOT_LIVE_ON_START === 'true',
@@ -193,20 +195,60 @@ const app = new WhatsAppClient({
 
 console.log(`[App] Preset de retomada ativa: ${presetName in PROACTIVE_PRESETS ? presetName : 'balanced'}`);
 
+const runtimeState = {
+  phase: 'starting',
+  error: '',
+};
+
+function setRuntimeState(phase, error = '') {
+  runtimeState.phase = String(phase || 'starting');
+  runtimeState.error = String(error || '');
+}
+
+async function initializeWhatsApp() {
+  setRuntimeState('initializing');
+  await app.initialize();
+  setRuntimeState('ready');
+  console.log('[App] Bot aguardando mensagens no WhatsApp...');
+}
+
 (async () => {
+  let pairingWeb = null;
+
   try {
     console.log('[App] Iniciando bot de vendas de brinquedos com WhatsApp...');
-    await app.initialize();
-    console.log('[App] Bot aguardando mensagens no WhatsApp...');
+
+    pairingWeb = createPairingServer({
+      app,
+      getRuntimeState: () => runtimeState,
+      port: Number(process.env.PORT || 3000),
+      enabled: process.env.WEB_PAIRING_ENABLED !== 'false',
+      username: process.env.WEB_PAIRING_USER || 'admin',
+      password: process.env.WEB_PAIRING_PASSWORD || process.env.DASHBOARD_PASSWORD || '',
+    });
+
+    await pairingWeb.start();
+    initializeWhatsApp().catch((err) => {
+      setRuntimeState('error', err.message);
+      console.error('[App] Falha ao iniciar WhatsApp:', err.message);
+    });
     
     // Graceful shutdown
     process.on('SIGINT', async () => {
+      setRuntimeState('stopping');
       console.log('[App] Encerrando...');
       await app.logout();
+      if (pairingWeb) {
+        await pairingWeb.stop();
+      }
       process.exit(0);
     });
   } catch (err) {
+    setRuntimeState('error', err.message);
     console.error('[App] Erro fatal:', err.message);
+    if (pairingWeb) {
+      await pairingWeb.stop().catch(() => {});
+    }
     process.exit(1);
   }
 })();

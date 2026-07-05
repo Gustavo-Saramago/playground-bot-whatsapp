@@ -12,8 +12,42 @@ Este é um novo projeto separado para atender leads de tráfego pago interessado
 
 ## Estrutura
 - index.js: ponto de entrada do bot
+- start.js: bootstrap da aplicacao
+- whatsapp/: cliente WhatsApp e automacoes
+- web/: interface web de pareamento (dominio)
 - knowledge/: base de conhecimento do negócio
 - flows/: fluxo de vendas e roteiro
+
+## Pareamento pelo dominio
+
+Quando o projeto estiver com dominio no Railway, abra:
+
+- /pairing
+
+Exemplo:
+
+- https://seu-dominio.railway.app/pairing
+
+A tela mostra:
+
+- status da conexao
+- codigo de pareamento para digitar no celular
+- QR code escaneavel (fallback)
+
+Variaveis de ambiente recomendadas:
+
+- WEB_PAIRING_ENABLED=true
+- WEB_PAIRING_USER=admin
+- WEB_PAIRING_PASSWORD=uma_senha_forte
+- PAIRING_PHONE_NUMBER=5511913900023 (somente numeros, este e o numero do WhatsApp do bot)
+
+Importante:
+
+- OWNER_PHONE e o numero do dono, usado para alertas e comandos manuais
+- PAIRING_PHONE_NUMBER e o numero do WhatsApp que sera conectado no bot
+- Se PAIRING_PHONE_NUMBER nao for definida, a tela continua funcionando com QR, mas sem codigo numerico de pareamento
+
+Se WEB_PAIRING_PASSWORD estiver vazia, a pagina fica sem senha.
 
 ## Retomada ativa estrategica
 
