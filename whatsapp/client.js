@@ -99,7 +99,6 @@ class WhatsAppClient {
       '--disable-setuid-sandbox',
       '--disable-dev-shm-usage',
       '--no-zygote',
-      '--single-process',
       '--disable-gpu',
       '--disable-software-rasterizer',
       '--disable-extensions',
