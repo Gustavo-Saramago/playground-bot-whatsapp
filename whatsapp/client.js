@@ -30,6 +30,9 @@ class WhatsAppClient {
     this.salesCatalog = this._loadSalesCatalog();
     this.pricingPolicy = this._loadPricingPolicy();
     this.ownerPhone = this._normalizePhone(options.ownerPhone || process.env.OWNER_PHONE || '');
+    this.pairingPhoneNumber = this._normalizePhone(
+      options.pairingPhoneNumber || process.env.PAIRING_PHONE_NUMBER || process.env.OWNER_PHONE || '',
+    );
     this.liveModeActive = options.liveModeActive === true;
     this.options = {
       authPath: options.authPath || path.join(__dirname, '..', '.wwebjs_auth'),
@@ -123,23 +126,43 @@ class WhatsAppClient {
         args: chromiumArgs,
         ...(chromeExecutablePath ? { executablePath: chromeExecutablePath } : {}),
       },
+      ...(this.pairingPhoneNumber
+        ? {
+            pairWithPhoneNumber: {
+              phoneNumber: this.pairingPhoneNumber,
+              showNotification: false,
+              intervalMs: 180000,
+            },
+          }
+        : {}),
     });
+
+    if (this.pairingPhoneNumber) {
+      console.log(`[WhatsApp] Pareamento por código ativo para: ${this._maskPhone(this.pairingPhoneNumber)}`);
+    }
 
     // Event: QR Code (para scan inicial)
     this.client.on('qr', (qr) => {
       console.log('[WhatsApp] QR Code recebido');
       this.qrData = qr;
       qrcode.toFile(path.join(__dirname, '..', 'qr.png'), qr).catch(e => console.error(e));
-      qrcode.toString(qr, { type: 'terminal', small: true }, (err, terminalQr) => {
-        if (err) {
-          console.error('[WhatsApp] Falha ao renderizar QR no terminal:', err.message);
-          return;
-        }
+      if (!this.pairingPhoneNumber) {
+        qrcode.toString(qr, { type: 'terminal', small: true }, (err, terminalQr) => {
+          if (err) {
+            console.error('[WhatsApp] Falha ao renderizar QR no terminal:', err.message);
+            return;
+          }
 
-        console.log('[WhatsApp] Escaneie o QR abaixo com o WhatsApp:');
-        console.log(terminalQr);
-      });
+          console.log('[WhatsApp] Escaneie o QR abaixo com o WhatsApp:');
+          console.log(terminalQr);
+        });
+      }
       console.log('[WhatsApp] QR salvo em qr.png — scan com seu celular');
+    });
+
+    this.client.on('code', (code) => {
+      console.log('[WhatsApp] Código de pareamento recebido:');
+      console.log(`[WhatsApp] ${code}`);
     });
 
     // Event: Pronto
@@ -1461,6 +1484,13 @@ class WhatsAppClient {
 
   _normalizePhone(value) {
     return String(value || '').replace(/\D/g, '');
+  }
+
+  _maskPhone(value) {
+    const normalized = this._normalizePhone(value);
+    if (!normalized) return '';
+    if (normalized.length <= 4) return normalized;
+    return `${normalized.slice(0, 2)}***${normalized.slice(-2)}`;
   }
 
   _resolveChromeExecutablePath() {
