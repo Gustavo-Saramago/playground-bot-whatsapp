@@ -130,6 +130,15 @@ class WhatsAppClient {
       console.log('[WhatsApp] QR Code recebido');
       this.qrData = qr;
       qrcode.toFile(path.join(__dirname, '..', 'qr.png'), qr).catch(e => console.error(e));
+      qrcode.toString(qr, { type: 'terminal', small: true }, (err, terminalQr) => {
+        if (err) {
+          console.error('[WhatsApp] Falha ao renderizar QR no terminal:', err.message);
+          return;
+        }
+
+        console.log('[WhatsApp] Escaneie o QR abaixo com o WhatsApp:');
+        console.log(terminalQr);
+      });
       console.log('[WhatsApp] QR salvo em qr.png — scan com seu celular');
     });
 
