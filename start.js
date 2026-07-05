@@ -40,6 +40,8 @@ function isTrue(value) {
   return String(value || '').trim().toLowerCase() === 'true';
 }
 
+const pairingPortalEnabled = isTrue(process.env.WEB_PAIRING_ENABLED || 'true');
+
 function maskPhone(rawPhone) {
   const digits = String(rawPhone || '').replace(/\D/g, '');
   if (!digits) return 'none';
@@ -48,7 +50,7 @@ function maskPhone(rawPhone) {
 }
 
 const hasAnthropicKey = String(process.env.ANTHROPIC_API_KEY || '').trim().length > 0;
-const allowFallbackRuntime = isTrue(process.env.SAFE_STARTUP_ALLOW_ALL) || isTrue(process.env.ALLOW_FALLBACK_LLM);
+const allowFallbackRuntime = isTrue(process.env.SAFE_STARTUP_ALLOW_ALL) || isTrue(process.env.ALLOW_FALLBACK_LLM) || pairingPortalEnabled;
 
 if (!hasAnthropicKey && !allowFallbackRuntime) {
   console.error('[App] Erro fatal: ANTHROPIC_API_KEY ausente e fallback nao autorizado.');
@@ -57,6 +59,9 @@ if (!hasAnthropicKey && !allowFallbackRuntime) {
 }
 
 console.log(`[App] Runtime LLM mode: ${hasAnthropicKey ? 'anthropic' : 'fallback-autorizado'}`);
+if (!hasAnthropicKey && pairingPortalEnabled) {
+  console.warn('[App] Portal de pareamento habilitado sem ANTHROPIC_API_KEY. O portal web pode subir em modo de manutencao.');
+}
 
 const startupHealth = {
   llm_mode: hasAnthropicKey ? 'anthropic' : 'fallback-autorizado',

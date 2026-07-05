@@ -7,6 +7,8 @@ function isTrue(value) {
   return String(value || '').trim().toLowerCase() === 'true';
 }
 
+const pairingPortalEnabled = isTrue(process.env.WEB_PAIRING_ENABLED || 'true');
+
 console.log('[Bot] Iniciando bot de vendas de brinquedos...');
 
 // Configuração básica
@@ -19,7 +21,7 @@ const config = {
   diasAtendimento: ['segunda', 'terça', 'quarta', 'quinta', 'sexta'],
 };
 
-const allowFallbackRuntime = isTrue(process.env.SAFE_STARTUP_ALLOW_ALL) || isTrue(process.env.ALLOW_FALLBACK_LLM);
+const allowFallbackRuntime = isTrue(process.env.SAFE_STARTUP_ALLOW_ALL) || isTrue(process.env.ALLOW_FALLBACK_LLM) || pairingPortalEnabled;
 
 if (!config.apiKey && !allowFallbackRuntime) {
   throw new Error('ANTHROPIC_API_KEY ausente e fallback nao autorizado. Configure ANTHROPIC_API_KEY ou ALLOW_FALLBACK_LLM=true para manutencao.');
