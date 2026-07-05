@@ -1442,8 +1442,25 @@ class WhatsAppClient {
 
   _resolveChromeExecutablePath() {
     const envPath = String(process.env.PUPPETEER_EXECUTABLE_PATH || '').trim();
-    if (envPath && fs.existsSync(envPath)) {
+    const isWindows = process.platform === 'win32';
+
+    if (isWindows && envPath && fs.existsSync(envPath)) {
       return envPath;
+    }
+
+    if (!isWindows && envPath) {
+      const linuxCandidates = [
+        '/usr/bin/chromium',
+        '/usr/bin/chromium-browser',
+        '/usr/bin/google-chrome',
+        '/usr/bin/google-chrome-stable',
+      ];
+
+      for (const candidate of linuxCandidates) {
+        if (fs.existsSync(candidate)) {
+          return candidate;
+        }
+      }
     }
 
     const commonPaths = [
