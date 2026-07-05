@@ -1,0 +1,2494 @@
+{
+  "5511943258863": {
+    "phone": "5511943258863",
+    "stage": "conexao",
+    "name": null,
+    "history": [
+      {
+        "from": "user",
+        "text": "Olá! Vi o anúncio da estrutura infantil! Gostaria de mais informações",
+        "timestamp": "2026-07-02T18:39:57.321Z"
+      },
+      {
+        "from": "bot",
+        "text": "Boa tarde!\nPode me dizer seu nome?",
+        "timestamp": "2026-07-02T18:39:57.330Z"
+      },
+      {
+        "from": "user",
+        "text": "Juliana",
+        "timestamp": "2026-07-02T18:40:46.648Z"
+      },
+      {
+        "from": "bot",
+        "text": "Boa tarde!\nPode me dizer seu nome?",
+        "timestamp": "2026-07-02T18:40:46.652Z"
+      },
+      {
+        "from": "user",
+        "text": "Passa os valores",
+        "timestamp": "2026-07-02T18:48:23.166Z"
+      },
+      {
+        "from": "bot",
+        "text": "Boa tarde!\nPode me dizer seu nome?",
+        "timestamp": "2026-07-02T18:48:23.174Z"
+      },
+      {
+        "from": "user",
+        "text": "Olá! Vi o anúncio da estrutura infantil! Gostaria de mais informações",
+        "timestamp": "2026-07-02T18:48:52.274Z"
+      },
+      {
+        "from": "bot",
+        "text": "Boa tarde!\nPode me dizer seu nome?",
+        "timestamp": "2026-07-02T18:48:52.281Z"
+      },
+      {
+        "from": "user",
+        "text": "Juliana",
+        "timestamp": "2026-07-02T18:49:22.278Z"
+      },
+      {
+        "from": "bot",
+        "text": "Boa tarde!\nPode me dizer seu nome?",
+        "timestamp": "2026-07-02T18:49:22.281Z"
+      },
+      {
+        "from": "user",
+        "text": "Boa tarde",
+        "timestamp": "2026-07-02T18:49:59.645Z"
+      },
+      {
+        "from": "bot",
+        "text": "Boa tarde!\nPode me dizer seu nome?",
+        "timestamp": "2026-07-02T18:49:59.648Z"
+      },
+      {
+        "from": "user",
+        "text": "Ok",
+        "timestamp": "2026-07-02T18:50:24.036Z"
+      },
+      {
+        "from": "bot",
+        "text": "Boa tarde!\nPode me dizer seu nome?",
+        "timestamp": "2026-07-02T18:50:24.040Z"
+      }
+    ],
+    "summary": null,
+    "questionIntents": [],
+    "commercialContext": {
+      "answersByIntent": {},
+      "facts": {
+        "businessType": null,
+        "situation": null,
+        "goal": null,
+        "spaceType": null,
+        "budgetSignal": "asked_budget_or_price"
+      },
+      "signals": [
+        "buscando_preco_ou_investimento"
+      ],
+      "opportunities": [],
+      "lastUpdatedAt": "2026-07-02T18:50:24.034Z"
+    },
+    "createdAt": "2026-07-02T18:39:57.306Z",
+    "lastUpdatedAt": "2026-07-02T18:50:24.040Z",
+    "score": 55
+  },
+  "556581017813": {
+    "phone": "556581017813",
+    "stage": "conexao",
+    "name": null,
+    "history": [
+      {
+        "from": "user",
+        "text": "Olá! Tenho interesse e queria mais informações, por favor.",
+        "timestamp": "2026-07-02T18:40:01.118Z"
+      },
+      {
+        "from": "bot",
+        "text": "Boa tarde!\nPode me dizer seu nome?",
+        "timestamp": "2026-07-02T18:40:01.121Z"
+      },
+      {
+        "from": "user",
+        "text": "Eu achei era Cuiabá mt",
+        "timestamp": "2026-07-02T18:40:49.472Z"
+      },
+      {
+        "from": "bot",
+        "text": "Boa tarde!\nPode me dizer seu nome?",
+        "timestamp": "2026-07-02T18:40:49.474Z"
+      },
+      {
+        "from": "user",
+        "text": "Luciano",
+        "timestamp": "2026-07-02T18:41:31.190Z"
+      },
+      {
+        "from": "bot",
+        "text": "Boa tarde!\nPode me dizer seu nome?",
+        "timestamp": "2026-07-02T18:41:31.193Z"
+      },
+      {
+        "from": "user",
+        "text": "Eu achei era Cuiabá mt",
+        "timestamp": "2026-07-02T18:49:00.916Z"
+      },
+      {
+        "from": "bot",
+        "text": "Boa tarde!\nPode me dizer seu nome?",
+        "timestamp": "2026-07-02T18:49:00.922Z"
+      },
+      {
+        "from": "user",
+        "text": "Luciano",
+        "timestamp": "2026-07-02T18:49:24.045Z"
+      },
+      {
+        "from": "bot",
+        "text": "Boa tarde!\nPode me dizer seu nome?",
+        "timestamp": "2026-07-02T18:49:24.047Z"
+      }
+    ],
+    "summary": null,
+    "questionIntents": [],
+    "commercialContext": {
+      "answersByIntent": {},
+      "facts": {
+        "businessType": null,
+        "situation": null,
+        "goal": null,
+        "spaceType": null,
+        "budgetSignal": null
+      },
+      "signals": [],
+      "opportunities": [],
+      "lastUpdatedAt": "2026-07-02T18:49:24.044Z"
+    },
+    "createdAt": "2026-07-02T18:40:01.115Z",
+    "lastUpdatedAt": "2026-07-02T18:49:24.047Z",
+    "score": 15
+  },
+  "5511991777929": {
+    "phone": "5511991777929",
+    "stage": "conexao",
+    "name": null,
+    "history": [
+      {
+        "from": "user",
+        "text": "Olá! Posso ter mais informações sobre isso?",
+        "timestamp": "2026-07-02T18:48:22.688Z"
+      },
+      {
+        "from": "bot",
+        "text": "Boa tarde!\nPode me dizer seu nome?",
+        "timestamp": "2026-07-02T18:48:22.695Z"
+      },
+      {
+        "from": "user",
+        "text": "Boa tarde",
+        "timestamp": "2026-07-02T18:54:17.874Z"
+      },
+      {
+        "from": "bot",
+        "text": "Boa tarde!\nPode me dizer seu nome?",
+        "timestamp": "2026-07-02T18:54:17.881Z"
+      },
+      {
+        "from": "user",
+        "text": "João Vitor",
+        "timestamp": "2026-07-02T18:54:42.500Z"
+      },
+      {
+        "from": "bot",
+        "text": "Boa tarde!\nPode me dizer seu nome?",
+        "timestamp": "2026-07-02T18:54:42.509Z"
+      }
+    ],
+    "summary": null,
+    "questionIntents": [],
+    "commercialContext": {
+      "answersByIntent": {},
+      "facts": {
+        "businessType": null,
+        "situation": null,
+        "goal": null,
+        "spaceType": null,
+        "budgetSignal": null
+      },
+      "signals": [],
+      "opportunities": [],
+      "lastUpdatedAt": "2026-07-02T18:54:42.497Z"
+    },
+    "createdAt": "2026-07-02T18:48:22.667Z",
+    "lastUpdatedAt": "2026-07-02T18:54:42.509Z",
+    "score": 0
+  },
+  "5511888888888": {
+    "phone": "5511888888888",
+    "stage": "conexao",
+    "name": null,
+    "history": [
+      {
+        "from": "user",
+        "text": "Ok",
+        "timestamp": "2026-07-02T18:58:06.117Z"
+      },
+      {
+        "from": "bot",
+        "text": "Perfeito, seguimos por aqui. Para eu te orientar melhor, me diz o que você quer montar agora.",
+        "timestamp": "2026-07-02T18:58:06.143Z"
+      }
+    ],
+    "summary": null,
+    "questionIntents": [],
+    "commercialContext": {
+      "answersByIntent": {},
+      "facts": {
+        "businessType": null,
+        "situation": null,
+        "goal": null,
+        "spaceType": null,
+        "budgetSignal": null
+      },
+      "signals": [],
+      "opportunities": [],
+      "lastUpdatedAt": "2026-07-02T18:58:06.105Z"
+    },
+    "createdAt": "2026-07-02T18:58:06.100Z",
+    "lastUpdatedAt": "2026-07-02T18:58:06.143Z",
+    "score": 15
+  },
+  "5511555555555": {
+    "phone": "5511555555555",
+    "stage": "conexao",
+    "name": null,
+    "history": [],
+    "summary": null,
+    "questionIntents": [
+      "ask_name"
+    ],
+    "commercialContext": {
+      "answersByIntent": {},
+      "facts": {
+        "businessType": null,
+        "situation": null,
+        "goal": null,
+        "spaceType": null,
+        "budgetSignal": null
+      },
+      "signals": [],
+      "opportunities": [],
+      "lastUpdatedAt": null
+    },
+    "createdAt": "2026-07-02T19:16:42.200Z",
+    "lastUpdatedAt": "2026-07-02T19:16:42.200Z",
+    "score": 0
+  },
+  "553491670285": {
+    "phone": "553491670285",
+    "stage": "conexao",
+    "name": "Atender",
+    "history": [
+      {
+        "from": "user",
+        "text": "/atender 5511966550135",
+        "timestamp": "2026-07-02T22:55:58.120Z"
+      },
+      {
+        "from": "bot",
+        "text": "Boa tarde!\nPode me dizer seu nome?",
+        "timestamp": "2026-07-02T22:55:58.124Z"
+      }
+    ],
+    "summary": null,
+    "questionIntents": [
+      "ask_situation"
+    ],
+    "commercialContext": {
+      "answersByIntent": {},
+      "facts": {
+        "businessType": null,
+        "situation": null,
+        "goal": null,
+        "spaceType": null,
+        "budgetSignal": null
+      },
+      "signals": [],
+      "opportunities": [],
+      "lastUpdatedAt": "2026-07-02T22:55:53.868Z"
+    },
+    "createdAt": "2026-07-02T22:55:53.851Z",
+    "lastUpdatedAt": "2026-07-02T22:56:24.522Z",
+    "score": 0
+  },
+  "5511777777777": {
+    "phone": "5511777777777",
+    "stage": "conexao",
+    "name": null,
+    "history": [
+      {
+        "from": "bot",
+        "text": "Boa noite!\nPerfeito, vamos seguir por aqui.\nVocê quer montar um espaço novo ou complementar um que já existe?",
+        "timestamp": "2026-07-02T23:05:04.563Z",
+        "type": "manual_start"
+      }
+    ],
+    "summary": null,
+    "questionIntents": [],
+    "commercialContext": {
+      "answersByIntent": {},
+      "facts": {
+        "businessType": null,
+        "situation": null,
+        "goal": null,
+        "spaceType": null,
+        "budgetSignal": null
+      },
+      "signals": [],
+      "opportunities": [],
+      "lastUpdatedAt": null
+    },
+    "createdAt": "2026-07-02T23:05:04.558Z",
+    "lastUpdatedAt": "2026-07-02T23:05:04.563Z",
+    "score": 0
+  },
+  "554396853331": {
+    "phone": "554396853331",
+    "stage": "diagnostico",
+    "name": null,
+    "history": [
+      {
+        "from": "bot",
+        "text": "Boa noite!\nPerfeito, vamos seguir por aqui.\nVocê quer montar um espaço novo ou complementar um que já existe?",
+        "timestamp": "2026-07-02T23:07:17.698Z",
+        "type": "manual_start"
+      },
+      {
+        "from": "user",
+        "text": "Eu quero compra para aluguéis",
+        "timestamp": "2026-07-02T23:08:18.972Z"
+      },
+      {
+        "from": "bot",
+        "text": "Entendido, você quer montar uma estrutura para alugar os brinquedos em festas e eventos?\nAntes de te passar os detalhes, como posso te chamar?",
+        "timestamp": "2026-07-02T23:08:18.978Z"
+      },
+      {
+        "from": "user",
+        "text": "Isso",
+        "timestamp": "2026-07-02T23:08:48.556Z",
+        "type": "quoted_reply",
+        "quoted_message": "Entendido, você quer montar uma estrutura para alugar os brinquedos em festas e eventos?",
+        "quoted_author": "209912969822284@lid",
+        "quoted_is_bot": true
+      },
+      {
+        "from": "bot",
+        "text": "Ótimo, faz todo sentido.\nComo posso te chamar?",
+        "timestamp": "2026-07-02T23:08:48.561Z"
+      },
+      {
+        "from": "user",
+        "text": "Vocês enviam?",
+        "timestamp": "2026-07-02T23:09:17.136Z"
+      },
+      {
+        "from": "bot",
+        "text": "Os brinquedos ficam em Uberlândia-MG e são entregues desmontados, prontos para envio.\nO frete fica por conta do comprador, mas costuma ser bem acessível em relação ao valor dos brinquedos.\nMe diz como posso te chamar para a gente continuar?",
+        "timestamp": "2026-07-02T23:09:17.141Z"
+      },
+      {
+        "from": "user",
+        "text": "Tudo bem",
+        "timestamp": "2026-07-02T23:09:53.892Z",
+        "type": "quoted_reply",
+        "quoted_message": "Perfeito, Isso. Como você está?",
+        "quoted_author": "209912969822284@lid",
+        "quoted_is_bot": true
+      },
+      {
+        "from": "bot",
+        "text": "Boa noite! Para continuar, qual é o seu nome?",
+        "timestamp": "2026-07-02T23:09:53.896Z"
+      },
+      {
+        "from": "user",
+        "text": "Espaço novo",
+        "timestamp": "2026-07-02T23:10:30.367Z"
+      },
+      {
+        "from": "bot",
+        "text": "Espaço novo para locação é uma ótima oportunidade.\nO Brinquedão Gigante com Cama Elástica é exatamente o tipo de estrutura que chama atenção e gera demanda em festas e eventos.\nVocê já tem ideia de quantos brinquedos quer ter disponíveis para locação?",
+        "timestamp": "2026-07-02T23:10:30.376Z"
+      },
+      {
+        "from": "user",
+        "text": "Novo projeto",
+        "timestamp": "2026-07-02T23:11:02.506Z"
+      },
+      {
+        "from": "bot",
+        "text": "Projeto novo então, ótimo ponto de partida.\nAntes de continuar, como posso te chamar?",
+        "timestamp": "2026-07-02T23:11:02.519Z"
+      },
+      {
+        "from": "user",
+        "text": "Tudo bem",
+        "timestamp": "2026-07-02T23:11:37.925Z"
+      },
+      {
+        "from": "bot",
+        "text": "Tudo bem por aqui também.\nMe conta um pouco mais sobre esse projeto: você já tem o espaço definido ou ainda está na fase de planejamento?",
+        "timestamp": "2026-07-02T23:11:37.934Z"
+      },
+      {
+        "from": "user",
+        "text": "Montar do zero",
+        "timestamp": "2026-07-02T23:12:10.489Z"
+      },
+      {
+        "from": "bot",
+        "text": "Montar do zero é o cenário ideal para escolher a estrutura certa desde o início.\nVocê já tem o espaço físico definido ou ainda está escolhendo o local?",
+        "timestamp": "2026-07-02T23:12:10.495Z"
+      },
+      {
+        "from": "user",
+        "text": "Vocês estão vendendo para fechar o negócio",
+        "timestamp": "2026-07-02T23:16:40.519Z"
+      },
+      {
+        "from": "bot",
+        "text": "Exatamente. Estamos desmobilizando um buffet completo para desocupar o imóvel, então os brinquedos estão sendo vendidos abaixo do que custaria comprar novos.\nSão estruturas com menos de 1 ano e pouco uso, praticamente novas.\nPara quem está montando do zero, é uma oportunidade bem diferente do que comprar de fábrica.\nMe conta: você já tem ideia do tipo de espaço que vai montar?",
+        "timestamp": "2026-07-02T23:16:40.528Z"
+      }
+    ],
+    "summary": null,
+    "questionIntents": [
+      "ask_situation",
+      "ask_name"
+    ],
+    "commercialContext": {
+      "answersByIntent": {
+        "reply_to_quote": "Entendido, você quer montar uma estrutura para alugar os brinquedos em festas e eventos? => Isso",
+        "ask_situation": "Vocês estão vendendo para fechar o negócio"
+      },
+      "facts": {
+        "businessType": null,
+        "situation": "do_zero",
+        "goal": null,
+        "spaceType": null,
+        "budgetSignal": null
+      },
+      "signals": [
+        "lead_quer_montar_do_zero"
+      ],
+      "opportunities": [],
+      "lastUpdatedAt": "2026-07-02T23:16:34.233Z"
+    },
+    "createdAt": "2026-07-02T23:06:57.534Z",
+    "lastUpdatedAt": "2026-07-02T23:17:05.694Z",
+    "score": 35
+  },
+  "5511966550135": {
+    "phone": "5511966550135",
+    "stage": "conexao",
+    "name": null,
+    "history": [
+      {
+        "from": "bot",
+        "text": "Boa noite!\nPerfeito, vamos seguir por aqui.\nVocê quer montar um espaço novo ou complementar um que já existe?",
+        "timestamp": "2026-07-02T23:07:57.334Z",
+        "type": "manual_start"
+      }
+    ],
+    "summary": null,
+    "questionIntents": [],
+    "commercialContext": {
+      "answersByIntent": {},
+      "facts": {
+        "businessType": null,
+        "situation": null,
+        "goal": null,
+        "spaceType": null,
+        "budgetSignal": null
+      },
+      "signals": [],
+      "opportunities": [],
+      "lastUpdatedAt": null
+    },
+    "createdAt": "2026-07-02T23:07:32.296Z",
+    "lastUpdatedAt": "2026-07-02T23:07:57.334Z",
+    "score": 0
+  },
+  "5516993255680": {
+    "phone": "5516993255680",
+    "stage": "diagnostico",
+    "name": "Montar Novo",
+    "history": [
+      {
+        "from": "bot",
+        "text": "Boa noite!\nPerfeito, vamos seguir por aqui.\nVocê quer montar um espaço novo ou complementar um que já existe?",
+        "timestamp": "2026-07-02T23:08:31.209Z",
+        "type": "manual_start"
+      },
+      {
+        "from": "user",
+        "text": "Montar novo",
+        "timestamp": "2026-07-02T23:16:24.865Z"
+      },
+      {
+        "from": "bot",
+        "text": "Ótimo, montar do zero é uma excelente oportunidade de já sair com tudo certo.\nQue tipo de espaço você está pensando? Buffet infantil, praça de alimentação, clube, hotel?",
+        "timestamp": "2026-07-02T23:16:24.870Z"
+      }
+    ],
+    "summary": null,
+    "questionIntents": [
+      "ask_space_type"
+    ],
+    "commercialContext": {
+      "answersByIntent": {},
+      "facts": {
+        "businessType": null,
+        "situation": null,
+        "goal": null,
+        "spaceType": null,
+        "budgetSignal": null
+      },
+      "signals": [],
+      "opportunities": [],
+      "lastUpdatedAt": "2026-07-02T23:16:20.728Z"
+    },
+    "createdAt": "2026-07-02T23:08:09.370Z",
+    "lastUpdatedAt": "2026-07-02T23:16:54.902Z",
+    "score": 0
+  },
+  "556599239760": {
+    "phone": "556599239760",
+    "stage": "conexao",
+    "name": null,
+    "history": [
+      {
+        "from": "bot",
+        "text": "Boa noite!\nPerfeito, vamos seguir por aqui.\nVocê quer montar um espaço novo ou complementar um que já existe?",
+        "timestamp": "2026-07-02T23:09:38.724Z",
+        "type": "manual_start"
+      }
+    ],
+    "summary": null,
+    "questionIntents": [],
+    "commercialContext": {
+      "answersByIntent": {},
+      "facts": {
+        "businessType": null,
+        "situation": null,
+        "goal": null,
+        "spaceType": null,
+        "budgetSignal": null
+      },
+      "signals": [],
+      "opportunities": [],
+      "lastUpdatedAt": null
+    },
+    "createdAt": "2026-07-02T23:09:11.590Z",
+    "lastUpdatedAt": "2026-07-02T23:09:38.724Z",
+    "score": 0
+  },
+  "5516997958502": {
+    "phone": "5516997958502",
+    "stage": "conexao",
+    "name": null,
+    "history": [
+      {
+        "from": "bot",
+        "text": "Boa noite!\nPerfeito, vamos seguir por aqui.\nVocê quer montar um espaço novo ou complementar um que já existe?",
+        "timestamp": "2026-07-02T23:21:00.817Z",
+        "type": "manual_start"
+      }
+    ],
+    "summary": null,
+    "questionIntents": [],
+    "commercialContext": {
+      "answersByIntent": {},
+      "facts": {
+        "businessType": null,
+        "situation": null,
+        "goal": null,
+        "spaceType": null,
+        "budgetSignal": null
+      },
+      "signals": [],
+      "opportunities": [],
+      "lastUpdatedAt": null
+    },
+    "createdAt": "2026-07-02T23:20:43.444Z",
+    "lastUpdatedAt": "2026-07-02T23:21:00.817Z",
+    "score": 0
+  },
+  "557996829523": {
+    "phone": "557996829523",
+    "stage": "conexao",
+    "name": null,
+    "history": [
+      {
+        "from": "bot",
+        "text": "Boa noite!\nPerfeito, vamos seguir por aqui.\nVocê quer montar um espaço novo ou complementar um que já existe?",
+        "timestamp": "2026-07-02T23:21:21.488Z",
+        "type": "manual_start"
+      }
+    ],
+    "summary": null,
+    "questionIntents": [],
+    "commercialContext": {
+      "answersByIntent": {},
+      "facts": {
+        "businessType": null,
+        "situation": null,
+        "goal": null,
+        "spaceType": null,
+        "budgetSignal": null
+      },
+      "signals": [],
+      "opportunities": [],
+      "lastUpdatedAt": null
+    },
+    "createdAt": "2026-07-02T23:21:03.071Z",
+    "lastUpdatedAt": "2026-07-02T23:21:21.488Z",
+    "score": 0
+  },
+  "559185961818": {
+    "phone": "559185961818",
+    "stage": "conexao",
+    "name": null,
+    "history": [
+      {
+        "from": "bot",
+        "text": "Boa noite!\nPerfeito, vamos seguir por aqui.\nVocê quer montar um espaço novo ou complementar um que já existe?",
+        "timestamp": "2026-07-02T23:22:01.547Z",
+        "type": "manual_start"
+      }
+    ],
+    "summary": null,
+    "questionIntents": [],
+    "commercialContext": {
+      "answersByIntent": {},
+      "facts": {
+        "businessType": null,
+        "situation": null,
+        "goal": null,
+        "spaceType": null,
+        "budgetSignal": null
+      },
+      "signals": [],
+      "opportunities": [],
+      "lastUpdatedAt": null
+    },
+    "createdAt": "2026-07-02T23:21:36.499Z",
+    "lastUpdatedAt": "2026-07-02T23:22:01.547Z",
+    "score": 0
+  },
+  "553391594916": {
+    "phone": "553391594916",
+    "stage": "diagnostico",
+    "name": "Kristian",
+    "history": [
+      {
+        "from": "user",
+        "text": "4 m",
+        "timestamp": "2026-07-02T23:22:33.491Z"
+      },
+      {
+        "from": "bot",
+        "text": "Boa tarde!\nCom quem estou falando?",
+        "timestamp": "2026-07-02T23:22:33.495Z"
+      },
+      {
+        "from": "user",
+        "text": "Kristian",
+        "timestamp": "2026-07-02T23:23:08.815Z"
+      },
+      {
+        "from": "bot",
+        "text": "Kristian, boa tarde!\nMe conta, você está pensando em montar um espaço infantil ou já tem algum negócio em andamento?",
+        "timestamp": "2026-07-02T23:23:08.819Z"
+      }
+    ],
+    "summary": null,
+    "questionIntents": [
+      "ask_name"
+    ],
+    "commercialContext": {
+      "answersByIntent": {
+        "ask_name": "Kristian"
+      },
+      "facts": {
+        "businessType": null,
+        "situation": null,
+        "goal": null,
+        "spaceType": null,
+        "budgetSignal": null
+      },
+      "signals": [],
+      "opportunities": [],
+      "lastUpdatedAt": "2026-07-02T23:23:05.413Z"
+    },
+    "createdAt": "2026-07-02T23:22:30.144Z",
+    "lastUpdatedAt": "2026-07-02T23:23:08.819Z",
+    "score": 0
+  },
+  "5522997221321": {
+    "phone": "5522997221321",
+    "stage": "conexao",
+    "name": null,
+    "history": [
+      {
+        "from": "bot",
+        "text": "Boa noite!\nPerfeito, vamos seguir por aqui.\nVocê quer montar um espaço novo ou complementar um que já existe?",
+        "timestamp": "2026-07-02T23:22:59.833Z",
+        "type": "manual_start"
+      }
+    ],
+    "summary": null,
+    "questionIntents": [],
+    "commercialContext": {
+      "answersByIntent": {},
+      "facts": {
+        "businessType": null,
+        "situation": null,
+        "goal": null,
+        "spaceType": null,
+        "budgetSignal": null
+      },
+      "signals": [],
+      "opportunities": [],
+      "lastUpdatedAt": null
+    },
+    "createdAt": "2026-07-02T23:22:32.917Z",
+    "lastUpdatedAt": "2026-07-02T23:22:59.833Z",
+    "score": 0
+  },
+  "553599247907": {
+    "phone": "553599247907",
+    "stage": "conexao",
+    "name": null,
+    "history": [
+      {
+        "from": "bot",
+        "text": "Boa noite!\nPerfeito, vamos seguir por aqui.\nVocê quer montar um espaço novo ou complementar um que já existe?",
+        "timestamp": "2026-07-02T23:23:28.994Z",
+        "type": "manual_start"
+      },
+      {
+        "from": "user",
+        "text": "Agradecemos sua mensagem. Não estamos disponíveis no momento, mas responderemos assim que possível. Em caso de urgência por favor me ligue. \n\nAtenciosamente\n\nAlice Ferreira",
+        "timestamp": "2026-07-02T23:26:18.060Z"
+      },
+      {
+        "from": "bot",
+        "text": "Sem problema, Alice! Pode me chamar quando estiver disponível.\nVou deixar as informações aqui para você avaliar no seu tempo.",
+        "timestamp": "2026-07-02T23:26:18.075Z"
+      }
+    ],
+    "summary": null,
+    "questionIntents": [],
+    "commercialContext": {
+      "answersByIntent": {},
+      "facts": {
+        "businessType": null,
+        "situation": null,
+        "goal": null,
+        "spaceType": null,
+        "budgetSignal": null
+      },
+      "signals": [],
+      "opportunities": [],
+      "lastUpdatedAt": "2026-07-02T23:26:14.228Z"
+    },
+    "createdAt": "2026-07-02T23:23:07.938Z",
+    "lastUpdatedAt": "2026-07-02T23:26:18.075Z",
+    "score": 23
+  },
+  "5513974071111": {
+    "phone": "5513974071111",
+    "stage": "conexao",
+    "name": null,
+    "history": [
+      {
+        "from": "bot",
+        "text": "Boa noite!\nPerfeito, vamos seguir por aqui.\nVocê quer montar um espaço novo ou complementar um que já existe?",
+        "timestamp": "2026-07-02T23:25:37.946Z",
+        "type": "manual_start"
+      }
+    ],
+    "summary": null,
+    "questionIntents": [],
+    "commercialContext": {
+      "answersByIntent": {},
+      "facts": {
+        "businessType": null,
+        "situation": null,
+        "goal": null,
+        "spaceType": null,
+        "budgetSignal": null
+      },
+      "signals": [],
+      "opportunities": [],
+      "lastUpdatedAt": null
+    },
+    "createdAt": "2026-07-02T23:25:15.739Z",
+    "lastUpdatedAt": "2026-07-02T23:25:37.946Z",
+    "score": 0
+  },
+  "557791025440": {
+    "phone": "557791025440",
+    "stage": "conexao",
+    "name": null,
+    "history": [
+      {
+        "from": "bot",
+        "text": "Boa noite!\nPerfeito, vamos seguir por aqui.\nVocê quer montar um espaço novo ou complementar um que já existe?",
+        "timestamp": "2026-07-02T23:26:03.640Z",
+        "type": "manual_start"
+      }
+    ],
+    "summary": null,
+    "questionIntents": [],
+    "commercialContext": {
+      "answersByIntent": {},
+      "facts": {
+        "businessType": null,
+        "situation": null,
+        "goal": null,
+        "spaceType": null,
+        "budgetSignal": null
+      },
+      "signals": [],
+      "opportunities": [],
+      "lastUpdatedAt": null
+    },
+    "createdAt": "2026-07-02T23:25:40.252Z",
+    "lastUpdatedAt": "2026-07-02T23:26:03.640Z",
+    "score": 0
+  },
+  "557199821840": {
+    "phone": "557199821840",
+    "stage": "conexao",
+    "name": null,
+    "history": [
+      {
+        "from": "bot",
+        "text": "Boa noite!\nPerfeito, vamos seguir por aqui.\nVocê quer montar um espaço novo ou complementar um que já existe?",
+        "timestamp": "2026-07-02T23:26:27.965Z",
+        "type": "manual_start"
+      }
+    ],
+    "summary": null,
+    "questionIntents": [],
+    "commercialContext": {
+      "answersByIntent": {},
+      "facts": {
+        "businessType": null,
+        "situation": null,
+        "goal": null,
+        "spaceType": null,
+        "budgetSignal": null
+      },
+      "signals": [],
+      "opportunities": [],
+      "lastUpdatedAt": null
+    },
+    "createdAt": "2026-07-02T23:26:06.051Z",
+    "lastUpdatedAt": "2026-07-02T23:26:27.965Z",
+    "score": 0
+  },
+  "559887847288": {
+    "phone": "559887847288",
+    "stage": "conexao",
+    "name": null,
+    "history": [
+      {
+        "from": "bot",
+        "text": "Boa noite!\nPerfeito, vamos seguir por aqui.\nVocê quer montar um espaço novo ou complementar um que já existe?",
+        "timestamp": "2026-07-02T23:26:53.003Z",
+        "type": "manual_start"
+      }
+    ],
+    "summary": null,
+    "questionIntents": [],
+    "commercialContext": {
+      "answersByIntent": {},
+      "facts": {
+        "businessType": null,
+        "situation": null,
+        "goal": null,
+        "spaceType": null,
+        "budgetSignal": null
+      },
+      "signals": [],
+      "opportunities": [],
+      "lastUpdatedAt": null
+    },
+    "createdAt": "2026-07-02T23:26:30.272Z",
+    "lastUpdatedAt": "2026-07-02T23:26:53.003Z",
+    "score": 0
+  },
+  "559899687747": {
+    "phone": "559899687747",
+    "stage": "conexao",
+    "name": null,
+    "history": [
+      {
+        "from": "bot",
+        "text": "Boa noite!\nPerfeito, vamos seguir por aqui.\nVocê quer montar um espaço novo ou complementar um que já existe?",
+        "timestamp": "2026-07-02T23:27:15.539Z",
+        "type": "manual_start"
+      }
+    ],
+    "summary": null,
+    "questionIntents": [],
+    "commercialContext": {
+      "answersByIntent": {},
+      "facts": {
+        "businessType": null,
+        "situation": null,
+        "goal": null,
+        "spaceType": null,
+        "budgetSignal": null
+      },
+      "signals": [],
+      "opportunities": [],
+      "lastUpdatedAt": null
+    },
+    "createdAt": "2026-07-02T23:26:55.252Z",
+    "lastUpdatedAt": "2026-07-02T23:27:15.539Z",
+    "score": 0
+  },
+  "559291700498": {
+    "phone": "559291700498",
+    "stage": "conexao",
+    "name": null,
+    "history": [
+      {
+        "from": "bot",
+        "text": "Boa noite!\nPerfeito, vamos seguir por aqui.\nVocê quer montar um espaço novo ou complementar um que já existe?",
+        "timestamp": "2026-07-02T23:27:45.845Z",
+        "type": "manual_start"
+      }
+    ],
+    "summary": null,
+    "questionIntents": [],
+    "commercialContext": {
+      "answersByIntent": {},
+      "facts": {
+        "businessType": null,
+        "situation": null,
+        "goal": null,
+        "spaceType": null,
+        "budgetSignal": null
+      },
+      "signals": [],
+      "opportunities": [],
+      "lastUpdatedAt": null
+    },
+    "createdAt": "2026-07-02T23:27:19.229Z",
+    "lastUpdatedAt": "2026-07-02T23:27:45.847Z",
+    "score": 0
+  },
+  "5511999999999": {
+    "phone": "5511999999999",
+    "stage": "conexao",
+    "name": null,
+    "history": [
+      {
+        "from": "user",
+        "text": "mensagem antiga",
+        "timestamp": "2026-07-02T23:34:57.659Z"
+      }
+    ],
+    "summary": null,
+    "questionIntents": [],
+    "commercialContext": {
+      "answersByIntent": {},
+      "facts": {
+        "businessType": null,
+        "situation": null,
+        "goal": null,
+        "spaceType": null,
+        "budgetSignal": null
+      },
+      "signals": [],
+      "opportunities": [],
+      "lastUpdatedAt": null
+    },
+    "createdAt": "2026-07-02T23:34:57.659Z",
+    "lastUpdatedAt": "2026-07-02T23:34:57.659Z",
+    "score": 0
+  },
+  "5511888777666": {
+    "phone": "5511888777666",
+    "stage": "conexao",
+    "name": null,
+    "history": [
+      {
+        "from": "user",
+        "text": "msg recente",
+        "timestamp": "2026-07-02T23:38:17.027Z"
+      }
+    ],
+    "summary": null,
+    "questionIntents": [],
+    "commercialContext": {
+      "answersByIntent": {},
+      "facts": {
+        "businessType": null,
+        "situation": null,
+        "goal": null,
+        "spaceType": null,
+        "budgetSignal": null
+      },
+      "signals": [],
+      "opportunities": [],
+      "lastUpdatedAt": null
+    },
+    "createdAt": "2026-07-02T23:38:17.027Z",
+    "lastUpdatedAt": "2026-07-02T23:38:17.027Z",
+    "score": 0
+  },
+  "558299157622": {
+    "phone": "558299157622",
+    "stage": "conexao",
+    "name": null,
+    "history": [
+      {
+        "from": "bot",
+        "text": "Boa noite!\nPerfeito, vamos seguir por aqui.\nVocê quer montar um espaço novo ou complementar um que já existe?",
+        "timestamp": "2026-07-02T23:41:30.289Z",
+        "type": "manual_start"
+      }
+    ],
+    "summary": null,
+    "questionIntents": [],
+    "commercialContext": {
+      "answersByIntent": {},
+      "facts": {
+        "businessType": null,
+        "situation": null,
+        "goal": null,
+        "spaceType": null,
+        "budgetSignal": null
+      },
+      "signals": [],
+      "opportunities": [],
+      "lastUpdatedAt": null
+    },
+    "createdAt": "2026-07-02T23:41:02.156Z",
+    "lastUpdatedAt": "2026-07-02T23:41:30.289Z",
+    "score": 0
+  },
+  "559182028978": {
+    "phone": "559182028978",
+    "stage": "conexao",
+    "name": null,
+    "history": [
+      {
+        "from": "bot",
+        "text": "Boa noite!\nPerfeito, vamos seguir por aqui.\nVocê quer montar um espaço novo ou complementar um que já existe?",
+        "timestamp": "2026-07-02T23:41:58.108Z",
+        "type": "manual_start"
+      }
+    ],
+    "summary": null,
+    "questionIntents": [],
+    "commercialContext": {
+      "answersByIntent": {},
+      "facts": {
+        "businessType": null,
+        "situation": null,
+        "goal": null,
+        "spaceType": null,
+        "budgetSignal": null
+      },
+      "signals": [],
+      "opportunities": [],
+      "lastUpdatedAt": null
+    },
+    "createdAt": "2026-07-02T23:41:32.879Z",
+    "lastUpdatedAt": "2026-07-02T23:41:58.108Z",
+    "score": 0
+  },
+  "553591497598": {
+    "phone": "553591497598",
+    "stage": "diagnostico",
+    "name": null,
+    "history": [
+      {
+        "from": "bot",
+        "text": "Boa noite!\nPerfeito, vamos seguir por aqui.\nVocê quer montar um espaço novo ou complementar um que já existe?",
+        "timestamp": "2026-07-02T23:42:22.847Z",
+        "type": "manual_start"
+      },
+      {
+        "from": "user",
+        "text": "Gostaria de montar um espaço novo",
+        "timestamp": "2026-07-03T00:19:20.845Z"
+      },
+      {
+        "from": "bot",
+        "text": "Que ótimo, montar do zero é uma oportunidade incrível de já sair com tudo certo.\nMe conta: que tipo de espaço você está pensando? Uma loja, restaurante, buffet infantil?",
+        "timestamp": "2026-07-03T00:19:20.860Z"
+      },
+      {
+        "from": "user",
+        "text": "300 m",
+        "timestamp": "2026-07-03T00:20:08.783Z"
+      },
+      {
+        "from": "bot",
+        "text": "300m² é um espaço bem generoso, dá para montar algo completo.\nEsse espaço é de um buffet, restaurante, loja? Me conta um pouco mais sobre o negócio.",
+        "timestamp": "2026-07-03T00:20:08.801Z"
+      },
+      {
+        "from": "user",
+        "text": "Pode sim",
+        "timestamp": "2026-07-03T00:23:42.267Z"
+      },
+      {
+        "from": "bot",
+        "text": "Que tipo de negócio você vai montar nesse espaço?",
+        "timestamp": "2026-07-03T00:23:42.292Z"
+      },
+      {
+        "from": "user",
+        "text": "Me envia",
+        "timestamp": "2026-07-03T00:24:17.051Z"
+      },
+      {
+        "from": "bot",
+        "text": "Claro, te mando os vídeos dos brinquedos em funcionamento.\nAntes de enviar, só me confirma: como posso te chamar?",
+        "timestamp": "2026-07-03T00:24:17.056Z"
+      }
+    ],
+    "summary": null,
+    "questionIntents": [
+      "ask_space_type"
+    ],
+    "commercialContext": {
+      "answersByIntent": {
+        "ask_space_type": "Me envia"
+      },
+      "facts": {
+        "businessType": null,
+        "situation": "do_zero",
+        "goal": null,
+        "spaceType": null,
+        "budgetSignal": null
+      },
+      "signals": [
+        "lead_quer_montar_do_zero"
+      ],
+      "opportunities": [],
+      "lastUpdatedAt": "2026-07-03T00:24:12.518Z"
+    },
+    "createdAt": "2026-07-02T23:42:00.263Z",
+    "lastUpdatedAt": "2026-07-03T00:24:58.252Z",
+    "score": 30
+  },
+  "5519971072395": {
+    "phone": "5519971072395",
+    "stage": "conexao",
+    "name": null,
+    "history": [
+      {
+        "from": "bot",
+        "text": "Boa noite!\nPerfeito, vamos seguir por aqui.\nVocê quer montar um espaço novo ou complementar um que já existe?",
+        "timestamp": "2026-07-02T23:42:44.515Z",
+        "type": "manual_start"
+      }
+    ],
+    "summary": null,
+    "questionIntents": [],
+    "commercialContext": {
+      "answersByIntent": {},
+      "facts": {
+        "businessType": null,
+        "situation": null,
+        "goal": null,
+        "spaceType": null,
+        "budgetSignal": null
+      },
+      "signals": [],
+      "opportunities": [],
+      "lastUpdatedAt": null
+    },
+    "createdAt": "2026-07-02T23:42:25.297Z",
+    "lastUpdatedAt": "2026-07-02T23:42:44.515Z",
+    "score": 0
+  },
+  "553791321861": {
+    "phone": "553791321861",
+    "stage": "apresentacao",
+    "name": "Montar Um Novo",
+    "history": [
+      {
+        "from": "bot",
+        "text": "Boa noite!\nPerfeito, vamos seguir por aqui.\nVocê quer montar um espaço novo ou complementar um que já existe?",
+        "timestamp": "2026-07-02T23:43:12.017Z",
+        "type": "manual_start"
+      },
+      {
+        "from": "user",
+        "text": "Montar um novo",
+        "timestamp": "2026-07-02T23:43:31.372Z"
+      },
+      {
+        "from": "bot",
+        "text": "Ótimo, montar do zero tem suas vantagens — você já começa com uma estrutura completa e bem definida.\nMe conta: que tipo de espaço você está pensando? Buffet infantil, área de lazer em restaurante, clube, algo assim?",
+        "timestamp": "2026-07-02T23:43:31.376Z"
+      },
+      {
+        "from": "user",
+        "text": "Só tenho um restaurante/hamburgueria",
+        "timestamp": "2026-07-02T23:44:38.974Z"
+      },
+      {
+        "from": "bot",
+        "text": "Restaurante com espaço kids é uma combinação muito boa — as famílias ficam mais tempo e voltam com mais frequência.\nVocê já tem uma área separada pensada para isso, ou ainda está definindo onde vai montar?",
+        "timestamp": "2026-07-02T23:44:38.980Z"
+      },
+      {
+        "from": "user",
+        "text": "Sim",
+        "timestamp": "2026-07-02T23:56:11.061Z",
+        "type": "quoted_reply",
+        "quoted_message": "Você já tem uma área separada pensada para isso, ou ainda está definindo onde vai montar?",
+        "quoted_author": "209912969822284@lid",
+        "quoted_is_bot": true
+      },
+      {
+        "from": "bot",
+        "text": "Ótimo, então você já tem o espaço reservado.\nTem ideia de qual é a metragem disponível para montar a área kids?",
+        "timestamp": "2026-07-02T23:56:11.070Z"
+      },
+      {
+        "from": "user",
+        "text": "Eu já tenho a loja em um espaço a anos",
+        "timestamp": "2026-07-02T23:56:41.668Z"
+      },
+      {
+        "from": "bot",
+        "text": "Entendi, então é um espaço consolidado, com movimento já garantido.\nTem ideia de quantos metros quadrados você teria disponível para montar a área kids?",
+        "timestamp": "2026-07-02T23:56:41.676Z"
+      },
+      {
+        "from": "user",
+        "text": "E agora estou de mudança para um lugar justamente por conta do parque",
+        "timestamp": "2026-07-02T23:57:14.126Z"
+      },
+      {
+        "from": "bot",
+        "text": "Então você já está se movendo por causa disso — isso mostra que a decisão é séria.\nVocê já sabe mais ou menos o tamanho do novo espaço que vai ter disponível para o parque?",
+        "timestamp": "2026-07-02T23:57:14.131Z"
+      },
+      {
+        "from": "user",
+        "text": "Vc tem um catálogo ?",
+        "timestamp": "2026-07-02T23:57:55.306Z"
+      },
+      {
+        "from": "bot",
+        "text": "Tenho sim. Posso te enviar fotos e vídeos dos brinquedos em funcionamento.\nAntes de mandar, só para contextualizar: estamos vendendo a estrutura completa de um buffet/playground que está sendo desmontado por mudança de cidade.\nSão brinquedos com menos de 1 ano de uso, praticamente novos. Quer que eu te mande os vídeos primeiro para você ter uma visão geral?",
+        "timestamp": "2026-07-02T23:57:55.326Z"
+      },
+      {
+        "from": "bot",
+        "text": "Você já tem uma área separada pensada para isso, ou ainda está definindo onde vai montar?",
+        "timestamp": "2026-07-03T00:01:23.627Z"
+      },
+      {
+        "from": "bot",
+        "text": "Entendi. Me conta um pouco mais para eu te ajudar da melhor forma.",
+        "timestamp": "2026-07-03T00:05:35.160Z"
+      },
+      {
+        "from": "bot",
+        "text": "Entendi. Me conta um pouco mais para eu te ajudar da melhor forma.",
+        "timestamp": "2026-07-03T00:05:35.168Z"
+      },
+      {
+        "from": "user",
+        "text": "Kkkkk",
+        "timestamp": "2026-07-03T00:20:20.000Z",
+        "type": "quoted_reply",
+        "quoted_message": "Tem um bot maluco aqui",
+        "quoted_author": "209912969822284@lid",
+        "quoted_is_bot": true
+      },
+      {
+        "from": "bot",
+        "text": "Haha, desculpa a bagunça aí!\nMe confirma: quer que eu te mande os vídeos dos brinquedos em funcionamento?",
+        "timestamp": "2026-07-03T00:20:20.012Z"
+      },
+      {
+        "from": "user",
+        "text": "Pode ser",
+        "timestamp": "2026-07-03T00:20:48.673Z",
+        "type": "quoted_reply",
+        "quoted_message": "Posso te mandar alguns videos dos brinquedos para vc ver melhor eles",
+        "quoted_author": "209912969822284:4@lid",
+        "quoted_is_bot": true
+      },
+      {
+        "from": "bot",
+        "text": "Ótimo, te mando agora.\nSão vídeos do espaço completo em funcionamento — assim você já consegue visualizar o porte da estrutura.",
+        "timestamp": "2026-07-03T00:20:48.684Z"
+      }
+    ],
+    "summary": null,
+    "questionIntents": [
+      "ask_space_type"
+    ],
+    "commercialContext": {
+      "answersByIntent": {
+        "ask_space_type": "Pode ser",
+        "reply_to_quote": "Posso te mandar alguns videos dos brinquedos para vc ver melhor eles => Pode ser"
+      },
+      "facts": {
+        "businessType": "loja",
+        "situation": "already_has_structure",
+        "goal": null,
+        "spaceType": null,
+        "budgetSignal": null
+      },
+      "signals": [
+        "citacao_confirma_estrutura_existente",
+        "lead_ja_tem_estrutura"
+      ],
+      "opportunities": [
+        "restaurante_com_espaco_kids",
+        "loja_com_atracao_de_clientes"
+      ],
+      "lastUpdatedAt": "2026-07-03T00:20:44.923Z"
+    },
+    "createdAt": "2026-07-02T23:42:46.796Z",
+    "lastUpdatedAt": "2026-07-03T00:21:12.583Z",
+    "score": 15
+  },
+  "5511979938726": {
+    "phone": "5511979938726",
+    "stage": "conexao",
+    "name": null,
+    "history": [
+      {
+        "from": "bot",
+        "text": "Boa noite!\nPerfeito, vamos seguir por aqui.\nVocê quer montar um espaço novo ou complementar um que já existe?",
+        "timestamp": "2026-07-02T23:43:36.991Z",
+        "type": "manual_start"
+      }
+    ],
+    "summary": null,
+    "questionIntents": [],
+    "commercialContext": {
+      "answersByIntent": {},
+      "facts": {
+        "businessType": null,
+        "situation": null,
+        "goal": null,
+        "spaceType": null,
+        "budgetSignal": null
+      },
+      "signals": [],
+      "opportunities": [],
+      "lastUpdatedAt": null
+    },
+    "createdAt": "2026-07-02T23:43:14.125Z",
+    "lastUpdatedAt": "2026-07-02T23:43:36.991Z",
+    "score": 0
+  },
+  "5514999045436": {
+    "phone": "5514999045436",
+    "stage": "conexao",
+    "name": null,
+    "history": [
+      {
+        "from": "bot",
+        "text": "Boa noite!\nPerfeito, vamos seguir por aqui.\nVocê quer montar um espaço novo ou complementar um que já existe?",
+        "timestamp": "2026-07-02T23:44:03.026Z",
+        "type": "manual_start"
+      }
+    ],
+    "summary": null,
+    "questionIntents": [],
+    "commercialContext": {
+      "answersByIntent": {},
+      "facts": {
+        "businessType": null,
+        "situation": null,
+        "goal": null,
+        "spaceType": null,
+        "budgetSignal": null
+      },
+      "signals": [],
+      "opportunities": [],
+      "lastUpdatedAt": null
+    },
+    "createdAt": "2026-07-02T23:43:39.271Z",
+    "lastUpdatedAt": "2026-07-02T23:44:03.026Z",
+    "score": 0
+  },
+  "557591669209": {
+    "phone": "557591669209",
+    "stage": "conexao",
+    "name": null,
+    "history": [
+      {
+        "from": "bot",
+        "text": "Boa noite!\nPerfeito, vamos seguir por aqui.\nVocê quer montar um espaço novo ou complementar um que já existe?",
+        "timestamp": "2026-07-02T23:44:28.523Z",
+        "type": "manual_start"
+      }
+    ],
+    "summary": null,
+    "questionIntents": [],
+    "commercialContext": {
+      "answersByIntent": {},
+      "facts": {
+        "businessType": null,
+        "situation": null,
+        "goal": null,
+        "spaceType": null,
+        "budgetSignal": null
+      },
+      "signals": [],
+      "opportunities": [],
+      "lastUpdatedAt": null
+    },
+    "createdAt": "2026-07-02T23:44:05.403Z",
+    "lastUpdatedAt": "2026-07-02T23:44:28.523Z",
+    "score": 0
+  },
+  "5584177474": {
+    "phone": "5584177474",
+    "stage": "conexao",
+    "name": null,
+    "history": [
+      {
+        "from": "bot",
+        "text": "Boa noite!\nPerfeito, vamos seguir por aqui.\nVocê quer montar um espaço novo ou complementar um que já existe?",
+        "timestamp": "2026-07-02T23:44:55.741Z",
+        "type": "manual_start"
+      }
+    ],
+    "summary": null,
+    "questionIntents": [],
+    "commercialContext": {
+      "answersByIntent": {},
+      "facts": {
+        "businessType": null,
+        "situation": null,
+        "goal": null,
+        "spaceType": null,
+        "budgetSignal": null
+      },
+      "signals": [],
+      "opportunities": [],
+      "lastUpdatedAt": null
+    },
+    "createdAt": "2026-07-02T23:44:30.943Z",
+    "lastUpdatedAt": "2026-07-02T23:44:55.741Z",
+    "score": 0
+  },
+  "5517991429253": {
+    "phone": "5517991429253",
+    "stage": "conexao",
+    "name": null,
+    "history": [
+      {
+        "from": "bot",
+        "text": "Boa noite!\nPerfeito, vamos seguir por aqui.\nVocê quer montar um espaço novo ou complementar um que já existe?",
+        "timestamp": "2026-07-02T23:45:18.285Z",
+        "type": "manual_start"
+      }
+    ],
+    "summary": null,
+    "questionIntents": [],
+    "commercialContext": {
+      "answersByIntent": {},
+      "facts": {
+        "businessType": null,
+        "situation": null,
+        "goal": null,
+        "spaceType": null,
+        "budgetSignal": null
+      },
+      "signals": [],
+      "opportunities": [],
+      "lastUpdatedAt": null
+    },
+    "createdAt": "2026-07-02T23:44:58.297Z",
+    "lastUpdatedAt": "2026-07-02T23:45:18.285Z",
+    "score": 0
+  },
+  "554199557887": {
+    "phone": "554199557887",
+    "stage": "diagnostico",
+    "name": "Rafael",
+    "history": [
+      {
+        "from": "user",
+        "text": "Oi",
+        "timestamp": "2026-07-02T23:45:47.264Z"
+      },
+      {
+        "from": "bot",
+        "text": "Boa tarde!\nCom quem estou falando?",
+        "timestamp": "2026-07-02T23:45:47.268Z"
+      },
+      {
+        "from": "bot",
+        "text": "Boa noite!\nPerfeito, vamos seguir por aqui.\nVocê quer montar um espaço novo ou complementar um que já existe?",
+        "timestamp": "2026-07-02T23:45:48.304Z",
+        "type": "manual_start"
+      },
+      {
+        "from": "user",
+        "text": "A grande verdade eu busco carretinha KidPlay",
+        "timestamp": "2026-07-02T23:46:33.417Z"
+      },
+      {
+        "from": "bot",
+        "text": "Carretinha KidPlay não temos disponível aqui.\nO que estamos vendendo são brinquedos de um buffet/playground completo que está sendo desmobilizado em Uberlândia-MG. Os donos estão mudando de cidade e precisam desocupar o imóvel.\nSão peças com menos de 1 ano de uso, em ótimo estado. O carro-chefe é um Brinquedão Gigante de 3 andares com cama elástica dupla profissional.\nVocê está buscando algo para montar em qual tipo de espaço?",
+        "timestamp": "2026-07-02T23:46:33.424Z"
+      },
+      {
+        "from": "user",
+        "text": "Rafael",
+        "timestamp": "2026-07-02T23:47:04.033Z",
+        "type": "quoted_reply",
+        "quoted_message": "Com quem estou falando?",
+        "quoted_author": "209912969822284@lid",
+        "quoted_is_bot": true
+      },
+      {
+        "from": "bot",
+        "text": "Rafael, que bom ter você aqui.\nVocê mencionou que buscava uma carretinha KidPlay. É para montar em algum espaço específico ou estava pensando em algo móvel para eventos?",
+        "timestamp": "2026-07-02T23:47:04.041Z"
+      },
+      {
+        "from": "user",
+        "text": "Vi depois isso",
+        "timestamp": "2026-07-02T23:47:35.265Z"
+      },
+      {
+        "from": "bot",
+        "text": "Sem problema, Rafael.\nEnquanto isso, me conta: você tem algum espaço em mente para montar uma estrutura de brinquedos?",
+        "timestamp": "2026-07-02T23:47:35.270Z"
+      },
+      {
+        "from": "user",
+        "text": "Agradeço o retorno",
+        "timestamp": "2026-07-02T23:48:02.415Z"
+      },
+      {
+        "from": "bot",
+        "text": "Claro, Rafael.\nMe conta um pouco mais sobre o que você está planejando. É para negócio próprio, evento ou outro tipo de espaço?",
+        "timestamp": "2026-07-02T23:48:02.428Z"
+      },
+      {
+        "from": "user",
+        "text": "Móvel para eventos",
+        "timestamp": "2026-07-02T23:48:23.089Z"
+      },
+      {
+        "from": "bot",
+        "text": "Entendido, Rafael.\nVocê trabalha com eventos infantis ou está pensando em começar nesse mercado?",
+        "timestamp": "2026-07-02T23:48:23.101Z"
+      },
+      {
+        "from": "user",
+        "text": "Não",
+        "timestamp": "2026-07-02T23:48:56.067Z",
+        "type": "quoted_reply",
+        "quoted_message": "Enquanto isso, me conta: você tem algum espaço em mente para montar uma estrutura de brinquedos?",
+        "quoted_author": "209912969822284@lid",
+        "quoted_is_bot": true
+      },
+      {
+        "from": "bot",
+        "text": "Está pensando em entrar nesse mercado então?\nMe conta um pouco como você imaginou esse negócio funcionando.",
+        "timestamp": "2026-07-02T23:48:56.082Z"
+      },
+      {
+        "from": "user",
+        "text": "E a carretinha KidPlay",
+        "timestamp": "2026-07-02T23:49:29.571Z"
+      },
+      {
+        "from": "bot",
+        "text": "A carretinha KidPlay não faz parte do que temos disponível hoje.\nEstamos vendendo brinquedos de um buffet infantil completo que está sendo desmobilizado em Uberlândia. São estruturas fixas de alto padrão, com menos de 1 ano de uso.\nPara eventos móveis, o que mais se encaixa seria uma estrutura montável como o Brinquedão Gigante, que desmonta e pode ser transportado.\nVocê pensava em algum tipo de brinquedo específico para trabalhar nos eventos?",
+        "timestamp": "2026-07-02T23:49:29.607Z"
+      },
+      {
+        "from": "user",
+        "text": "Percebi rsrsrs",
+        "timestamp": "2026-07-02T23:49:58.736Z",
+        "type": "quoted_reply",
+        "quoted_message": "Colocaram um bot maluco aqui",
+        "quoted_author": "209912969822284:4@lid",
+        "quoted_is_bot": true
+      },
+      {
+        "from": "bot",
+        "text": "Que tipo de evento você tem em mente? Festas infantis, feiras, shopping?",
+        "timestamp": "2026-07-02T23:49:58.745Z"
+      },
+      {
+        "from": "user",
+        "text": "Faço locações de trailer",
+        "timestamp": "2026-07-02T23:50:23.520Z",
+        "type": "quoted_reply",
+        "quoted_message": "Você trabalha com eventos infantis ou está pensando em começar nesse mercado?",
+        "quoted_author": "209912969822284@lid",
+        "quoted_is_bot": true
+      },
+      {
+        "from": "bot",
+        "text": "Entendi, locação de trailer é um mercado interessante.\nComo você imagina incluir brinquedos nisso? Seria para alugar junto com o trailer, ou montar um espaço fixo em algum ponto?",
+        "timestamp": "2026-07-02T23:50:23.530Z"
+      }
+    ],
+    "summary": null,
+    "questionIntents": [
+      "ask_name",
+      "ask_space_type"
+    ],
+    "commercialContext": {
+      "answersByIntent": {
+        "ask_name": "Vi depois isso",
+        "ask_space_type": "Faço locações de trailer",
+        "reply_to_quote": "Enquanto isso, me conta: você tem algum espaço em mente para montar uma estrutura de brinquedos? => Não"
+      },
+      "facts": {
+        "businessType": null,
+        "situation": null,
+        "goal": null,
+        "spaceType": null,
+        "budgetSignal": null
+      },
+      "signals": [],
+      "opportunities": [],
+      "lastUpdatedAt": "2026-07-02T23:50:18.828Z"
+    },
+    "createdAt": "2026-07-02T23:45:20.252Z",
+    "lastUpdatedAt": "2026-07-02T23:50:23.530Z",
+    "score": 16
+  },
+  "556592026622": {
+    "phone": "556592026622",
+    "stage": "conexao",
+    "name": null,
+    "history": [
+      {
+        "from": "bot",
+        "text": "Boa noite!\nPerfeito, vamos seguir por aqui.\nVocê quer montar um espaço novo ou complementar um que já existe?",
+        "timestamp": "2026-07-02T23:46:11.818Z",
+        "type": "manual_start"
+      }
+    ],
+    "summary": null,
+    "questionIntents": [],
+    "commercialContext": {
+      "answersByIntent": {},
+      "facts": {
+        "businessType": null,
+        "situation": null,
+        "goal": null,
+        "spaceType": null,
+        "budgetSignal": null
+      },
+      "signals": [],
+      "opportunities": [],
+      "lastUpdatedAt": null
+    },
+    "createdAt": "2026-07-02T23:45:50.606Z",
+    "lastUpdatedAt": "2026-07-02T23:46:11.818Z",
+    "score": 0
+  },
+  "556291341082": {
+    "phone": "556291341082",
+    "stage": "conexao",
+    "name": null,
+    "history": [
+      {
+        "from": "bot",
+        "text": "Boa noite!\nPerfeito, vamos seguir por aqui.\nVocê quer montar um espaço novo ou complementar um que já existe?",
+        "timestamp": "2026-07-02T23:46:36.381Z",
+        "type": "manual_start"
+      }
+    ],
+    "summary": null,
+    "questionIntents": [],
+    "commercialContext": {
+      "answersByIntent": {},
+      "facts": {
+        "businessType": null,
+        "situation": null,
+        "goal": null,
+        "spaceType": null,
+        "budgetSignal": null
+      },
+      "signals": [],
+      "opportunities": [],
+      "lastUpdatedAt": null
+    },
+    "createdAt": "2026-07-02T23:46:14.310Z",
+    "lastUpdatedAt": "2026-07-02T23:46:36.381Z",
+    "score": 0
+  },
+  "553180209813": {
+    "phone": "553180209813",
+    "stage": "conexao",
+    "name": null,
+    "history": [
+      {
+        "from": "bot",
+        "text": "Boa noite!\nPerfeito, vamos seguir por aqui.\nVocê quer montar um espaço novo ou complementar um que já existe?",
+        "timestamp": "2026-07-02T23:47:01.188Z",
+        "type": "manual_start"
+      }
+    ],
+    "summary": null,
+    "questionIntents": [],
+    "commercialContext": {
+      "answersByIntent": {},
+      "facts": {
+        "businessType": null,
+        "situation": null,
+        "goal": null,
+        "spaceType": null,
+        "budgetSignal": null
+      },
+      "signals": [],
+      "opportunities": [],
+      "lastUpdatedAt": null
+    },
+    "createdAt": "2026-07-02T23:46:38.346Z",
+    "lastUpdatedAt": "2026-07-02T23:47:01.188Z",
+    "score": 0
+  },
+  "5519997902001": {
+    "phone": "5519997902001",
+    "stage": "conexao",
+    "name": null,
+    "history": [
+      {
+        "from": "bot",
+        "text": "Boa noite!\nPerfeito, vamos seguir por aqui.\nVocê quer montar um espaço novo ou complementar um que já existe?",
+        "timestamp": "2026-07-02T23:47:22.882Z",
+        "type": "manual_start"
+      }
+    ],
+    "summary": null,
+    "questionIntents": [],
+    "commercialContext": {
+      "answersByIntent": {},
+      "facts": {
+        "businessType": null,
+        "situation": null,
+        "goal": null,
+        "spaceType": null,
+        "budgetSignal": null
+      },
+      "signals": [],
+      "opportunities": [],
+      "lastUpdatedAt": null
+    },
+    "createdAt": "2026-07-02T23:47:03.244Z",
+    "lastUpdatedAt": "2026-07-02T23:47:22.882Z",
+    "score": 0
+  },
+  "5515991014352": {
+    "phone": "5515991014352",
+    "stage": "conexao",
+    "name": null,
+    "history": [
+      {
+        "from": "bot",
+        "text": "Boa noite!\nPerfeito, vamos seguir por aqui.\nVocê quer montar um espaço novo ou complementar um que já existe?",
+        "timestamp": "2026-07-02T23:47:46.887Z",
+        "type": "manual_start"
+      }
+    ],
+    "summary": null,
+    "questionIntents": [],
+    "commercialContext": {
+      "answersByIntent": {},
+      "facts": {
+        "businessType": null,
+        "situation": null,
+        "goal": null,
+        "spaceType": null,
+        "budgetSignal": null
+      },
+      "signals": [],
+      "opportunities": [],
+      "lastUpdatedAt": null
+    },
+    "createdAt": "2026-07-02T23:47:24.991Z",
+    "lastUpdatedAt": "2026-07-02T23:47:46.887Z",
+    "score": 0
+  },
+  "5511975789394": {
+    "phone": "5511975789394",
+    "stage": "conexao",
+    "name": null,
+    "history": [
+      {
+        "from": "bot",
+        "text": "Boa noite!\nPerfeito, vamos seguir por aqui.\nVocê quer montar um espaço novo ou complementar um que já existe?",
+        "timestamp": "2026-07-02T23:48:13.399Z",
+        "type": "manual_start"
+      }
+    ],
+    "summary": null,
+    "questionIntents": [],
+    "commercialContext": {
+      "answersByIntent": {},
+      "facts": {
+        "businessType": null,
+        "situation": null,
+        "goal": null,
+        "spaceType": null,
+        "budgetSignal": null
+      },
+      "signals": [],
+      "opportunities": [],
+      "lastUpdatedAt": null
+    },
+    "createdAt": "2026-07-02T23:47:49.055Z",
+    "lastUpdatedAt": "2026-07-02T23:48:13.399Z",
+    "score": 0
+  },
+  "5511777000000": {
+    "phone": "5511777000000",
+    "stage": "conexao",
+    "name": null,
+    "history": [
+      {
+        "from": "bot",
+        "text": "Com quem estou falando?",
+        "timestamp": "2026-07-02T23:54:10.895Z"
+      },
+      {
+        "from": "bot",
+        "text": "Você quer montar um espaço novo ou complementar um que já existe?",
+        "timestamp": "2026-07-02T23:54:10.902Z"
+      }
+    ],
+    "summary": null,
+    "questionIntents": [],
+    "commercialContext": {
+      "answersByIntent": {},
+      "facts": {
+        "businessType": null,
+        "situation": null,
+        "goal": null,
+        "spaceType": null,
+        "budgetSignal": null
+      },
+      "signals": [],
+      "opportunities": [],
+      "lastUpdatedAt": null
+    },
+    "createdAt": "2026-07-02T23:54:10.895Z",
+    "lastUpdatedAt": "2026-07-02T23:54:10.902Z",
+    "score": 0
+  },
+  "5537999999999": {
+    "phone": "5537999999999",
+    "stage": "conexao",
+    "name": null,
+    "history": [
+      {
+        "0": "2",
+        "1": "0",
+        "2": "2",
+        "3": "6",
+        "4": "-",
+        "5": "0",
+        "6": "7",
+        "7": "-",
+        "8": "0",
+        "9": "3",
+        "10": "T",
+        "11": "0",
+        "12": "0",
+        "13": ":",
+        "14": "0",
+        "15": "7",
+        "16": ":",
+        "17": "4",
+        "18": "5",
+        "19": ".",
+        "20": "0",
+        "21": "8",
+        "22": "0",
+        "23": "Z",
+        "from": "bot",
+        "text": "Entendi. Me conta um pouco mais para eu te ajudar da melhor forma.",
+        "timestamp": "2026-07-03T00:07:45.084Z"
+      }
+    ],
+    "summary": null,
+    "questionIntents": [],
+    "commercialContext": {
+      "answersByIntent": {},
+      "facts": {
+        "businessType": null,
+        "situation": null,
+        "goal": null,
+        "spaceType": null,
+        "budgetSignal": null
+      },
+      "signals": [],
+      "opportunities": [],
+      "lastUpdatedAt": null
+    },
+    "createdAt": "2026-07-03T00:07:45.084Z",
+    "lastUpdatedAt": "2026-07-03T00:07:45.085Z",
+    "score": 0
+  },
+  "5516997813812": {
+    "phone": "5516997813812",
+    "stage": "conexao",
+    "name": "Obgd",
+    "history": [
+      {
+        "from": "bot",
+        "text": "Boa noite!\nPerfeito, vamos seguir por aqui.\nVocê quer montar um espaço novo ou complementar um que já existe?",
+        "timestamp": "2026-07-03T01:34:18.790Z",
+        "type": "manual_start"
+      },
+      {
+        "from": "user",
+        "text": "Boa noite",
+        "timestamp": "2026-07-03T01:35:36.756Z"
+      },
+      {
+        "from": "bot",
+        "text": "Com quem estou falando?",
+        "timestamp": "2026-07-03T01:35:36.763Z"
+      },
+      {
+        "from": "user",
+        "text": "Desculpa não quero comprar",
+        "timestamp": "2026-07-03T01:36:05.079Z"
+      },
+      {
+        "from": "bot",
+        "text": "Tranquilo, sem problema nenhum.\nSe mudar de ideia ou surgir alguma dúvida, pode falar comigo aqui. Boa noite!",
+        "timestamp": "2026-07-03T01:36:05.090Z"
+      },
+      {
+        "from": "user",
+        "text": "Obgd",
+        "timestamp": "2026-07-03T01:36:29.422Z"
+      },
+      {
+        "from": "bot",
+        "text": "Boa noite! Posso te ajudar em algo?",
+        "timestamp": "2026-07-03T01:36:29.429Z"
+      }
+    ],
+    "summary": null,
+    "questionIntents": [
+      "ask_space_type"
+    ],
+    "commercialContext": {
+      "answersByIntent": {
+        "ask_space_type": "Obgd"
+      },
+      "facts": {
+        "businessType": null,
+        "situation": null,
+        "goal": null,
+        "spaceType": null,
+        "budgetSignal": null,
+        "leadIntent": "active"
+      },
+      "signals": [
+        "lead_opt_out_explicit",
+        "lead_reengaged_after_opt_out"
+      ],
+      "opportunities": [],
+      "lastUpdatedAt": "2026-07-03T01:39:08.557Z"
+    },
+    "createdAt": "2026-07-03T01:33:52.100Z",
+    "lastUpdatedAt": "2026-07-03T01:39:08.557Z",
+    "score": 18
+  },
+  "558396197234": {
+    "phone": "558396197234",
+    "stage": "conexao",
+    "name": null,
+    "history": [
+      {
+        "from": "user",
+        "text": "Agradecemos sua mensagem. Não estamos disponíveis no momento, mas entraremos em contato assim que possível.",
+        "timestamp": "2026-07-03T01:34:59.785Z"
+      },
+      {
+        "from": "bot",
+        "text": "Boa tarde!\nPode me dizer seu nome?",
+        "timestamp": "2026-07-03T01:34:59.799Z"
+      },
+      {
+        "from": "bot",
+        "text": "Boa noite!\nPerfeito, vamos seguir por aqui.\nVocê quer montar um espaço novo ou complementar um que já existe?",
+        "timestamp": "2026-07-03T01:35:11.980Z",
+        "type": "manual_start"
+      }
+    ],
+    "summary": null,
+    "questionIntents": [],
+    "commercialContext": {
+      "answersByIntent": {},
+      "facts": {
+        "businessType": null,
+        "situation": null,
+        "goal": null,
+        "spaceType": null,
+        "budgetSignal": null
+      },
+      "signals": [],
+      "opportunities": [],
+      "lastUpdatedAt": "2026-07-03T01:34:56.294Z"
+    },
+    "createdAt": "2026-07-03T01:34:47.037Z",
+    "lastUpdatedAt": "2026-07-03T01:35:11.980Z",
+    "score": 23
+  },
+  "556792022220": {
+    "phone": "556792022220",
+    "stage": "conexao",
+    "name": null,
+    "history": [
+      {
+        "from": "user",
+        "text": "Olá! Posso ter mais informações sobre isso?",
+        "timestamp": "2026-07-03T01:39:04.724Z"
+      },
+      {
+        "from": "bot",
+        "text": "Boa tarde!\nPode me dizer seu nome?",
+        "timestamp": "2026-07-03T01:39:04.735Z"
+      }
+    ],
+    "summary": null,
+    "questionIntents": [],
+    "commercialContext": {
+      "answersByIntent": {},
+      "facts": {
+        "businessType": null,
+        "situation": null,
+        "goal": null,
+        "spaceType": null,
+        "budgetSignal": null
+      },
+      "signals": [],
+      "opportunities": [],
+      "lastUpdatedAt": "2026-07-03T01:39:00.738Z"
+    },
+    "createdAt": "2026-07-03T01:39:00.720Z",
+    "lastUpdatedAt": "2026-07-03T01:39:04.735Z",
+    "score": 0
+  },
+  "5511913900384": {
+    "phone": "5511913900384",
+    "stage": "conexao",
+    "name": null,
+    "history": [
+      {
+        "from": "user",
+        "text": "Olá! Posso ter mais informações sobre isso?",
+        "timestamp": "2026-07-03T01:43:45.536Z"
+      },
+      {
+        "from": "bot",
+        "text": "Boa tarde!\nPode me dizer seu nome?",
+        "timestamp": "2026-07-03T01:43:45.544Z"
+      },
+      {
+        "from": "user",
+        "text": "?",
+        "timestamp": "2026-07-03T01:46:09.296Z"
+      },
+      {
+        "from": "bot",
+        "text": "Me conta seu nome para eu te ajudar melhor!",
+        "timestamp": "2026-07-03T01:46:09.307Z"
+      }
+    ],
+    "summary": null,
+    "questionIntents": [
+      "ask_space_type"
+    ],
+    "commercialContext": {
+      "answersByIntent": {},
+      "facts": {
+        "businessType": null,
+        "situation": null,
+        "goal": null,
+        "spaceType": null,
+        "budgetSignal": null
+      },
+      "signals": [],
+      "opportunities": [],
+      "lastUpdatedAt": "2026-07-03T01:46:06.380Z"
+    },
+    "createdAt": "2026-07-03T01:43:40.807Z",
+    "lastUpdatedAt": "2026-07-03T01:46:45.673Z",
+    "score": 0
+  },
+  "5512991896665": {
+    "phone": "5512991896665",
+    "stage": "apresentacao",
+    "name": null,
+    "history": [
+      {
+        "from": "user",
+        "text": "Boa noite",
+        "timestamp": "2026-07-03T02:11:10.133Z"
+      },
+      {
+        "from": "bot",
+        "text": "Boa noite!\nCom quem estou falando?",
+        "timestamp": "2026-07-03T02:11:10.140Z"
+      },
+      {
+        "from": "user",
+        "text": "Montar um espaço do zero",
+        "timestamp": "2026-07-03T02:12:26.905Z"
+      },
+      {
+        "from": "bot",
+        "text": "Entendido, montar do zero é uma ótima oportunidade de já começar com uma estrutura completa.\nMas antes de continuar, não me disse seu nome ainda. Como posso te chamar?",
+        "timestamp": "2026-07-03T02:12:26.909Z"
+      },
+      {
+        "from": "user",
+        "text": "Tô avaliando",
+        "timestamp": "2026-07-03T02:13:24.798Z"
+      },
+      {
+        "from": "bot",
+        "text": "Sem problema, avaliação faz parte do processo.\nSó para eu conseguir te ajudar melhor, como posso te chamar?",
+        "timestamp": "2026-07-03T02:13:24.804Z"
+      },
+      {
+        "from": "user",
+        "text": "Iniciando",
+        "timestamp": "2026-07-03T02:13:59.367Z"
+      },
+      {
+        "from": "bot",
+        "text": "Pode me dizer seu nome para eu continuar?",
+        "timestamp": "2026-07-03T02:13:59.373Z"
+      },
+      {
+        "from": "user",
+        "text": "Quero saber valores",
+        "timestamp": "2026-07-03T02:14:33.219Z"
+      },
+      {
+        "from": "bot",
+        "text": "O carro-chefe aqui é o Brinquedão Gigante com Cama Elástica, R$ 40.000,00 à vista.\nÉ uma estrutura praticamente nova, menos de 1 ano de uso e menos de 30 festas no período.\nTemos também um pacote com Área Baby e Espumados incluídos por R$ 45.000,00, ideal pra quem quer montar um espaço completo de uma vez.\nQuer ver os vídeos de funcionamento para ter uma ideia real de como fica montado?",
+        "timestamp": "2026-07-03T02:14:33.234Z"
+      },
+      {
+        "from": "user",
+        "text": "O que tem de produtos?",
+        "timestamp": "2026-07-03T02:14:57.250Z"
+      },
+      {
+        "from": "bot",
+        "text": "Temos esses itens disponíveis:\nBrinquedão Gigante com Cama Elástica — o principal, estrutura grande com múltiplas atrações\nÁrea Baby — espaço voltado para crianças menores\nEspumados — conjunto de peças de espuma para atividade livre\nCenografias — três ambientes temáticos: mercadinho, pet shop e cozinha\nTodos saindo de um buffet/playground completo, com menos de 1 ano de uso.\nO Brinquedão é o coração de qualquer espaço kids. Quer ver um vídeo dele funcionando?",
+        "timestamp": "2026-07-03T02:14:57.257Z"
+      },
+      {
+        "from": "user",
+        "text": "Sim",
+        "timestamp": "2026-07-03T02:15:33.742Z"
+      },
+      {
+        "from": "bot",
+        "text": "Perfeito, te mando agora.\nÉ o vídeo do Brinquedão em operação, dentro do buffet. Dá para ver o tamanho real, os andares, a cama elástica acoplada e o movimento das crianças usando.",
+        "timestamp": "2026-07-03T02:15:33.752Z"
+      }
+    ],
+    "summary": null,
+    "questionIntents": [
+      "ask_situation"
+    ],
+    "commercialContext": {
+      "answersByIntent": {
+        "ask_situation": "Sim"
+      },
+      "facts": {
+        "businessType": null,
+        "situation": "do_zero",
+        "goal": null,
+        "spaceType": null,
+        "budgetSignal": "asked_budget_or_price"
+      },
+      "signals": [
+        "lead_quer_montar_do_zero",
+        "buscando_preco_ou_investimento"
+      ],
+      "opportunities": [],
+      "lastUpdatedAt": "2026-07-03T02:15:29.765Z"
+    },
+    "createdAt": "2026-07-03T02:11:07.083Z",
+    "lastUpdatedAt": "2026-07-03T02:15:33.752Z",
+    "score": 40
+  },
+  "5511000000000": {
+    "phone": "5511000000000",
+    "stage": "diagnostico",
+    "name": null,
+    "history": [
+      {
+        "from": "user",
+        "text": "Quero montar um espaco kids para aumentar fluxo na minha loja",
+        "timestamp": "2026-07-05T03:44:29.510Z"
+      },
+      {
+        "from": "bot",
+        "text": "Boa noite!\nPode me dizer seu nome?",
+        "timestamp": "2026-07-05T03:44:29.520Z"
+      },
+      {
+        "from": "user",
+        "text": "Preciso fechar isso ainda essa semana",
+        "timestamp": "2026-07-05T03:44:29.535Z"
+      },
+      {
+        "from": "bot",
+        "text": "Perfeito, para aumentar fluxo e permanencia das familias, o ideal e montar uma estrutura com forte impacto visual e ticket recorrente.\nPara te direcionar com precisão, você quer montar do zero ou complementar uma estrutura que já existe?",
+        "timestamp": "2026-07-05T03:44:29.545Z"
+      }
+    ],
+    "summary": null,
+    "questionIntents": [],
+    "commercialContext": {
+      "answersByIntent": {},
+      "facts": {
+        "businessType": "loja",
+        "situation": "do_zero",
+        "goal": "aumentar_fluxo",
+        "spaceType": null,
+        "budgetSignal": null,
+        "urgency": "immediate"
+      },
+      "signals": [
+        "lead_quer_montar_do_zero",
+        "objetivo_espaco_kids",
+        "objetivo_aumentar_fluxo",
+        "urgencia_imediata"
+      ],
+      "opportunities": [
+        "loja_com_atracao_de_clientes"
+      ],
+      "lastUpdatedAt": "2026-07-05T03:44:29.529Z"
+    },
+    "createdAt": "2026-07-05T03:44:29.498Z",
+    "lastUpdatedAt": "2026-07-05T03:44:29.545Z",
+    "score": 30
+  },
+  "5511000000001": {
+    "phone": "5511000000001",
+    "stage": "apresentacao",
+    "name": null,
+    "history": [
+      {
+        "from": "user",
+        "text": "Oi",
+        "timestamp": "2026-07-05T03:44:34.936Z"
+      },
+      {
+        "from": "bot",
+        "text": "Boa noite!\nPode me dizer seu nome?",
+        "timestamp": "2026-07-05T03:44:34.945Z"
+      },
+      {
+        "from": "user",
+        "text": "Quero montar um espaco kids na loja",
+        "timestamp": "2026-07-05T03:44:34.958Z"
+      },
+      {
+        "from": "bot",
+        "text": "Perfeito, para aumentar fluxo e permanencia das familias, o ideal e montar uma estrutura com forte impacto visual e ticket recorrente.\nPara te direcionar com precisão, você quer montar do zero ou complementar uma estrutura que já existe?",
+        "timestamp": "2026-07-05T03:44:34.976Z"
+      },
+      {
+        "from": "user",
+        "text": "E do zero e com urgencia para essa semana",
+        "timestamp": "2026-07-05T03:44:34.997Z"
+      },
+      {
+        "from": "bot",
+        "text": "Pelo seu cenário, a recomendação mais assertiva é Parede de Escalada com Colchões de Segurança, com referência de R$ 5.000,00, por gerar impacto visual e aumentar permanência das famílias.\nSe fizer sentido, eu já te envio a condição completa com valor e logística para sua cidade.",
+        "timestamp": "2026-07-05T03:44:35.005Z"
+      }
+    ],
+    "summary": null,
+    "questionIntents": [],
+    "commercialContext": {
+      "answersByIntent": {},
+      "facts": {
+        "businessType": "loja",
+        "situation": "do_zero",
+        "goal": "espaco_kids",
+        "spaceType": null,
+        "budgetSignal": null,
+        "urgency": "immediate"
+      },
+      "signals": [
+        "lead_quer_montar_do_zero",
+        "objetivo_espaco_kids",
+        "urgencia_imediata"
+      ],
+      "opportunities": [
+        "loja_com_atracao_de_clientes"
+      ],
+      "lastUpdatedAt": "2026-07-05T03:44:34.990Z"
+    },
+    "createdAt": "2026-07-05T03:44:34.919Z",
+    "lastUpdatedAt": "2026-07-05T03:44:35.006Z",
+    "score": 15
+  },
+  "5511000000002": {
+    "phone": "5511000000002",
+    "stage": "apresentacao",
+    "name": null,
+    "history": [
+      {
+        "from": "user",
+        "text": "Oi",
+        "timestamp": "2026-07-05T03:45:32.583Z"
+      },
+      {
+        "from": "bot",
+        "text": "Boa noite!\nPode me dizer seu nome?",
+        "timestamp": "2026-07-05T03:45:32.595Z"
+      },
+      {
+        "from": "user",
+        "text": "Quero montar um espaco kids na loja",
+        "timestamp": "2026-07-05T03:45:32.616Z"
+      },
+      {
+        "from": "bot",
+        "text": "Perfeito, para aumentar fluxo e permanencia das familias, o ideal e montar uma estrutura com forte impacto visual e ticket recorrente.\nPara te direcionar com precisão, você quer montar do zero ou complementar uma estrutura que já existe?",
+        "timestamp": "2026-07-05T03:45:32.631Z"
+      },
+      {
+        "from": "user",
+        "text": "E do zero e com urgencia para essa semana",
+        "timestamp": "2026-07-05T03:45:32.654Z"
+      },
+      {
+        "from": "bot",
+        "text": "Pelo seu cenário, a recomendação mais assertiva é Brinquedão Gigante + Cama Elástica Profissional, com referência de R$ 40.000,00, por gerar impacto visual e aumentar permanência das famílias.\nSe fizer sentido, eu já te envio a condição completa com valor e logística para sua cidade.",
+        "timestamp": "2026-07-05T03:45:32.664Z"
+      }
+    ],
+    "summary": null,
+    "questionIntents": [],
+    "commercialContext": {
+      "answersByIntent": {},
+      "facts": {
+        "businessType": "loja",
+        "situation": "do_zero",
+        "goal": "espaco_kids",
+        "spaceType": null,
+        "budgetSignal": null,
+        "urgency": "immediate"
+      },
+      "signals": [
+        "lead_quer_montar_do_zero",
+        "objetivo_espaco_kids",
+        "urgencia_imediata"
+      ],
+      "opportunities": [
+        "loja_com_atracao_de_clientes"
+      ],
+      "lastUpdatedAt": "2026-07-05T03:45:32.642Z"
+    },
+    "createdAt": "2026-07-05T03:45:32.543Z",
+    "lastUpdatedAt": "2026-07-05T03:45:32.664Z",
+    "score": 15
+  },
+  "5511987654321": {
+    "phone": "5511987654321",
+    "stage": "diagnostico",
+    "name": null,
+    "history": [
+      {
+        "from": "user",
+        "text": "Olá, vendi uns brinquedos de um playground antigo e gostaria de saber como funciona a venda",
+        "timestamp": "2026-07-05T03:47:29.640Z"
+      },
+      {
+        "from": "bot",
+        "text": "Boa noite!\nPode me dizer seu nome?",
+        "timestamp": "2026-07-05T03:47:29.653Z"
+      },
+      {
+        "from": "user",
+        "text": "Preciso de algo atrativo para deixar a área de lazer da minha loja mais interessante",
+        "timestamp": "2026-07-05T03:47:29.667Z"
+      },
+      {
+        "from": "bot",
+        "text": "Perfeito, para aumentar fluxo e permanencia das familias, o ideal e montar uma estrutura com forte impacto visual e ticket recorrente.\nPara te direcionar com precisão, você quer montar do zero ou complementar uma estrutura que já existe?",
+        "timestamp": "2026-07-05T03:47:29.673Z"
+      },
+      {
+        "from": "user",
+        "text": "Qual é o valor do escorregador e como vocês entregam?",
+        "timestamp": "2026-07-05T03:47:29.684Z"
+      },
+      {
+        "from": "bot",
+        "text": "Sobre valor, referência atual: R$ 40.000,00. Sobre entrega, Frete e montagem existem em qualquer compra desse porte.\nPara eu te direcionar melhor, me conta se você está iniciando a operação kids ou já trabalha com isso.",
+        "timestamp": "2026-07-05T03:47:29.692Z"
+      }
+    ],
+    "summary": null,
+    "questionIntents": [],
+    "commercialContext": {
+      "answersByIntent": {},
+      "facts": {
+        "businessType": "loja",
+        "situation": null,
+        "goal": "espaco_kids",
+        "spaceType": null,
+        "budgetSignal": "asked_budget_or_price"
+      },
+      "signals": [
+        "objetivo_espaco_kids",
+        "buscando_preco_ou_investimento"
+      ],
+      "opportunities": [
+        "loja_com_atracao_de_clientes"
+      ],
+      "lastUpdatedAt": "2026-07-05T03:47:29.680Z"
+    },
+    "createdAt": "2026-07-05T03:47:29.621Z",
+    "lastUpdatedAt": "2026-07-05T03:47:29.692Z",
+    "score": 30
+  }
+}

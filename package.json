@@ -1,0 +1,16 @@
+{
+  "name": "playground-sales-bot",
+  "version": "1.0.0",
+  "description": "Bot de vendas para brinquedos de playground em desmontagem",
+  "main": "index.js",
+  "scripts": {
+    "start": "node start.js",
+    "start:safe": "powershell -ExecutionPolicy Bypass -File ./scripts/start-safe.ps1",
+    "test": "node test.js"
+  },
+  "dependencies": {
+    "@anthropic-ai/sdk": "^0.30.0",
+    "whatsapp-web.js": "^1.26.0",
+    "qrcode": "^1.5.3"
+  }
+}

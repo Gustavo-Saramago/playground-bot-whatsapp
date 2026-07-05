@@ -1,0 +1,32 @@
+{
+  "local_media": {
+    "videos_funcionamento_dir": "media/videos_funcionamento",
+    "area_baby_dir": "media/area_baby",
+    "brinquedao_dir": "media/brinquedao",
+    "cenografias_dir": "media/cenografias",
+    "espumados_dir": "media/espumados"
+  },
+  "videos_funcionamento": {
+    "url": "https://www.dropbox.com/scl/fo/45o1cjbg2vpthubyb1ft2/AM5aksa42dcXjdv4686wU5c?rlkey=65ypy3xuk6prvchom8kmbv2t1&dl=0",
+    "descricao": "Videos do playground em funcionamento com criancas, iluminacao e decoracao"
+  },
+  "fotos_individuais": {
+    "area_baby": {
+      "url": "https://www.dropbox.com/scl/fo/zwjlrlcyb5urqu1lygylx/AHd5DQVgKc67xtD706Bzx6g?rlkey=sum5rf05jx0mw65d28w96ax60&dl=0",
+      "descricao": "Fotos da Area Baby"
+    },
+    "brinquedao": {
+      "url": "https://www.dropbox.com/scl/fo/qvmlfdkob3qeytw0rth29/ALEsX3xs7CiZJBFlqcX2khc?rlkey=09gubr8jb02qsrslavelxevcz&dl=0",
+      "descricao": "Fotos do Brinquedao e da cama elastica"
+    },
+    "cenografias": {
+      "url": "https://www.dropbox.com/scl/fo/05turs1uw9bi5eb090oyq/ABTo2yVF38w0FIngRN2mNYU?rlkey=xxqrri1pynvmbqu3v36oisxw5&dl=0",
+      "descricao": "Fotos das cenografias"
+    },
+    "espumados": {
+      "url": "https://www.dropbox.com/scl/fo/4rgnsqcslz90pey85c5sb/AFcwD_FzCYdCY6AdCOtHkWI?rlkey=qqgevm4idywwtdmthpsvj4t7n&dl=0",
+      "descricao": "Fotos dos espumados"
+    }
+  },
+  "observacao": "Outros brinquedos nao possuem fotos individuais e podem ser vistos nos videos de funcionamento"
+}

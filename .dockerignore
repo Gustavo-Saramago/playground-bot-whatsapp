@@ -1,0 +1,10 @@
+node_modules
+npm-debug.log
+.git
+.gitignore
+.env
+.env.local
+.wwebjs_auth
+.wwebjs_cache
+.dialog_state.json
+qr.png
