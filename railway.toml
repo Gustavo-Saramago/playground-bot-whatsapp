@@ -4,4 +4,4 @@ builder = "dockerfile"
 [deploy]
 startCommand = "node start.js"
 restartPolicyType = "always"
-restartPolicyMaxRetries = 0
+restartPolicyMaxRetries = 10
