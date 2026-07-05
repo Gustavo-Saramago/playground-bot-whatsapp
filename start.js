@@ -32,6 +32,10 @@ function loadDotEnvFile(filePath) {
 loadDotEnvFile(path.join(__dirname, '.env'));
 loadDotEnvFile(path.join(__dirname, '.env.local'));
 
+if (process.platform !== 'win32' && process.env.PUPPETEER_EXECUTABLE_PATH) {
+  delete process.env.PUPPETEER_EXECUTABLE_PATH;
+}
+
 function isTrue(value) {
   return String(value || '').trim().toLowerCase() === 'true';
 }
