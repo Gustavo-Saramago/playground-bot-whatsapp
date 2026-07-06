@@ -1553,6 +1553,18 @@ class WhatsAppClient {
       return envPath;
     }
 
+    try {
+      const puppeteer = require('puppeteer');
+      if (puppeteer && typeof puppeteer.executablePath === 'function') {
+        const bundledPath = String(puppeteer.executablePath() || '').trim();
+        if (bundledPath && fs.existsSync(bundledPath)) {
+          return bundledPath;
+        }
+      }
+    } catch (_) {
+      // Keep searching other candidates when Puppeteer fallback is unavailable.
+    }
+
     const commonPaths = [
       'C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe',
       'C:\\Program Files (x86)\\Google\\Chrome\\Application\\chrome.exe',

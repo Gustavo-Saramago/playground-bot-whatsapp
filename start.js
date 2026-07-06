@@ -33,7 +33,12 @@ loadDotEnvFile(path.join(__dirname, '.env'));
 loadDotEnvFile(path.join(__dirname, '.env.local'));
 
 if (process.platform !== 'win32' && process.env.PUPPETEER_EXECUTABLE_PATH) {
-  delete process.env.PUPPETEER_EXECUTABLE_PATH;
+  const chromePath = String(process.env.PUPPETEER_EXECUTABLE_PATH || '').trim();
+  const looksLikeWindowsPath = /^[A-Za-z]:\\/.test(chromePath) || chromePath.includes('\\');
+  if (looksLikeWindowsPath) {
+    console.warn('[App] Ignorando PUPPETEER_EXECUTABLE_PATH com formato Windows em ambiente Linux.');
+    delete process.env.PUPPETEER_EXECUTABLE_PATH;
+  }
 }
 
 function isTrue(value) {
