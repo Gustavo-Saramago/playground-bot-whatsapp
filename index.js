@@ -77,10 +77,10 @@ async function handleMessage(phone, message, name = null, meta = {}) {
 // Export para integração com WhatsApp-web.js
 module.exports = { handleMessage, config, engine, dialog };
 
-// Se executado diretamente, inicia uma demo interativa
+// Se executado diretamente, delega para start.js para garantir boot completo do servico web.
 if (require.main === module) {
-  console.log(`[Demo] Bot ready. Use handleMessage(phone, text, name) para processar mensagens.`);
-  console.log(`[Demo] Exemplo: await handleMessage('5511987654321', 'Olá, tenho interesse', 'João')\n`);
+  console.warn('[Boot] index.js executado diretamente, redirecionando para start.js');
+  require('./start');
 }
 
 console.log('Bot de vendas de brinquedos pronto para ser conectado.');
