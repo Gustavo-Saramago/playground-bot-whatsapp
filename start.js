@@ -210,6 +210,18 @@ function setRuntimeState(phase, error = '') {
   runtimeState.error = String(error || '');
 }
 
+process.on('unhandledRejection', (reason) => {
+  const message = reason instanceof Error ? reason.message : String(reason || 'unhandled rejection');
+  setRuntimeState('error', message);
+  console.error('[App] Unhandled rejection capturada:', message);
+});
+
+process.on('uncaughtException', (error) => {
+  const message = error instanceof Error ? error.message : String(error || 'uncaught exception');
+  setRuntimeState('error', message);
+  console.error('[App] Uncaught exception capturada:', message);
+});
+
 async function initializeWhatsApp() {
   setRuntimeState('initializing');
   await app.initialize();
