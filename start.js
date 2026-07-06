@@ -278,7 +278,8 @@ async function initializeWhatsApp() {
       app: appBridge,
       getRuntimeState: () => runtimeState,
       port: Number(process.env.PORT || 3000),
-      enabled: process.env.WEB_PAIRING_ENABLED !== 'false',
+      // Keep HTTP service up unconditionally to satisfy Railway health checks.
+      enabled: true,
       username: process.env.WEB_PAIRING_USER || 'admin',
       password: process.env.WEB_PAIRING_PASSWORD || process.env.DASHBOARD_PASSWORD || '',
     });
