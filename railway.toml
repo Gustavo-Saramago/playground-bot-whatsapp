@@ -1,9 +1,7 @@
 [build]
-builder = "dockerfile"
+builder = "railpack"
 
 [deploy]
 startCommand = "node start.js"
-healthcheckPath = "/health"
-healthcheckTimeout = 60
 restartPolicyType = "on_failure"
-restartPolicyMaxRetries = 5
+restartPolicyMaxRetries = 10
