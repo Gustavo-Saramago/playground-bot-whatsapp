@@ -101,15 +101,17 @@ class WhatsAppClient {
     console.log('[WhatsApp] Inicializando cliente WhatsApp...');
 
     const chromeCandidates = this._resolveChromeExecutableCandidates();
-    console.log(`[WhatsApp] Chromium candidates: ${chromeCandidates.join(' | ')}`);
+    console.log(
+      `[WhatsApp] Chromium candidates: ${chromeCandidates.map((c) => (c ? c : 'default-bundled')).join(' | ')}`,
+    );
     const chromiumArgs = [
       '--no-sandbox',
       '--disable-setuid-sandbox',
       '--disable-dev-shm-usage',
       '--no-zygote',
-      '--single-process',
       '--no-first-run',
       '--no-default-browser-check',
+      '--no-proxy-server',
       '--disable-gpu',
       '--disable-software-rasterizer',
       '--disable-extensions',
@@ -1563,7 +1565,13 @@ class WhatsAppClient {
 
   _resolveChromeExecutableCandidates() {
     const candidates = [];
+    let hasDefaultCandidate = false;
+
     const pushCandidate = (value) => {
+      if (value === null) {
+        hasDefaultCandidate = true;
+        return;
+      }
       const normalized = String(value || '').trim();
       if (!normalized || candidates.includes(normalized)) return;
       candidates.push(normalized);
@@ -1618,8 +1626,11 @@ class WhatsAppClient {
       }
     }
 
-    // Empty executablePath means "let Puppeteer choose default".
-    pushCandidate('');
+    // Null candidate means "let Puppeteer choose default executablePath".
+    pushCandidate(null);
+    if (hasDefaultCandidate) {
+      candidates.push(null);
+    }
     return candidates;
   }
 
