@@ -100,13 +100,16 @@ class WhatsAppClient {
   async initialize() {
     console.log('[WhatsApp] Inicializando cliente WhatsApp...');
 
-    const chromeExecutablePath = this._resolveChromeExecutablePath();
-    console.log(`[WhatsApp] Chromium path: ${chromeExecutablePath || 'default-bundled'}`);
+    const chromeCandidates = this._resolveChromeExecutableCandidates();
+    console.log(`[WhatsApp] Chromium candidates: ${chromeCandidates.join(' | ')}`);
     const chromiumArgs = [
       '--no-sandbox',
       '--disable-setuid-sandbox',
       '--disable-dev-shm-usage',
       '--no-zygote',
+      '--single-process',
+      '--no-first-run',
+      '--no-default-browser-check',
       '--disable-gpu',
       '--disable-software-rasterizer',
       '--disable-extensions',
@@ -116,13 +119,14 @@ class WhatsAppClient {
       '--disable-component-update',
       '--disable-domain-reliability',
       '--disable-renderer-backgrounding',
+      '--disable-features=Translate,BackForwardCache,AcceptCHFrame,MediaRouter',
       '--disable-sync',
       '--hide-scrollbars',
       '--mute-audio',
       '--window-size=1280,900',
     ];
     
-    const buildClient = (usePairingCode) =>
+    const buildClient = (usePairingCode, chromeExecutablePath) =>
       new Client({
         authStrategy: new LocalAuth({ dataPath: this.options.authPath }),
         puppeteer: {
@@ -193,10 +197,41 @@ class WhatsAppClient {
       });
     };
 
-    const initializeClient = async (usePairingCode) => {
-      this.client = buildClient(usePairingCode);
+    const initializeClient = async (usePairingCode, chromeExecutablePath) => {
+      this.client = buildClient(usePairingCode, chromeExecutablePath);
       attachEvents(this.client);
       await this.client.initialize();
+    };
+
+    const resetClientInstance = async () => {
+      if (!this.client) return;
+      const staleClient = this.client;
+      this.client = null;
+      try {
+        await staleClient.destroy();
+      } catch (_) {
+        // Ignore teardown errors from partially initialized clients.
+      }
+    };
+
+    const initializeWithBrowserFallback = async (usePairingCode) => {
+      let lastError = null;
+
+      for (const candidate of chromeCandidates) {
+        const pathLabel = candidate || 'default-bundled';
+        console.log(`[WhatsApp] Tentando iniciar Chromium com: ${pathLabel}`);
+        try {
+          await initializeClient(usePairingCode, candidate || '');
+          console.log(`[WhatsApp] Chromium iniciado com: ${pathLabel}`);
+          return;
+        } catch (err) {
+          lastError = err;
+          console.warn(`[WhatsApp] Falha ao iniciar Chromium com ${pathLabel}: ${err.message}`);
+          await resetClientInstance();
+        }
+      }
+
+      throw lastError || new Error('Nao foi possivel iniciar Chromium com nenhum candidato.');
     };
 
     const canUsePairingCode = this.pairingCodeEnabled && !!this.pairingPhoneNumber;
@@ -210,7 +245,7 @@ class WhatsAppClient {
     }
 
     try {
-      await initializeClient(canUsePairingCode);
+      await initializeWithBrowserFallback(canUsePairingCode);
     } catch (err) {
       const canFallbackToQrOnly = canUsePairingCode;
       if (!canFallbackToQrOnly) {
@@ -220,8 +255,8 @@ class WhatsAppClient {
       console.error(`[WhatsApp] Falha no pareamento por código: ${err.message}`);
       console.warn('[WhatsApp] Recuando automaticamente para modo QR-only para manter o servico online.');
       this.pairingCode = '';
-      this.client = null;
-      await initializeClient(false);
+      await resetClientInstance();
+      await initializeWithBrowserFallback(false);
     }
     this._startProactiveFollowupScheduler();
     this._startInboundPoller();
@@ -1526,12 +1561,19 @@ class WhatsAppClient {
     return `${normalized.slice(0, 2)}***${normalized.slice(-2)}`;
   }
 
-  _resolveChromeExecutablePath() {
+  _resolveChromeExecutableCandidates() {
+    const candidates = [];
+    const pushCandidate = (value) => {
+      const normalized = String(value || '').trim();
+      if (!normalized || candidates.includes(normalized)) return;
+      candidates.push(normalized);
+    };
+
     const envPath = String(process.env.PUPPETEER_EXECUTABLE_PATH || '').trim();
     const isWindows = process.platform === 'win32';
 
     if (isWindows && envPath && fs.existsSync(envPath)) {
-      return envPath;
+      pushCandidate(envPath);
     }
 
     const linuxCandidates = [
@@ -1544,13 +1586,13 @@ class WhatsAppClient {
     if (!isWindows) {
       for (const candidate of linuxCandidates) {
         if (fs.existsSync(candidate)) {
-          return candidate;
+          pushCandidate(candidate);
         }
       }
     }
 
     if (!isWindows && envPath && fs.existsSync(envPath) && envPath.startsWith('/')) {
-      return envPath;
+      pushCandidate(envPath);
     }
 
     try {
@@ -1558,7 +1600,7 @@ class WhatsAppClient {
       if (puppeteer && typeof puppeteer.executablePath === 'function') {
         const bundledPath = String(puppeteer.executablePath() || '').trim();
         if (bundledPath && fs.existsSync(bundledPath)) {
-          return bundledPath;
+          pushCandidate(bundledPath);
         }
       }
     } catch (_) {
@@ -1572,11 +1614,13 @@ class WhatsAppClient {
 
     for (const candidate of commonPaths) {
       if (fs.existsSync(candidate)) {
-        return candidate;
+        pushCandidate(candidate);
       }
     }
 
-    return '';
+    // Empty executablePath means "let Puppeteer choose default".
+    pushCandidate('');
+    return candidates;
   }
 
   _phoneCandidates(phone) {
