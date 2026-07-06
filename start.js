@@ -75,7 +75,6 @@ const startupHealth = {
 
 console.log(`[App][Health] ${JSON.stringify(startupHealth)}`);
 
-const WhatsAppClient = require('./whatsapp/client');
 const { createPairingServer } = require('./web/server');
 
 if (!String(process.env.OPENAI_API_KEY || '').trim()) {
@@ -147,56 +146,93 @@ const PROACTIVE_PRESETS = {
 const presetName = (process.env.PROACTIVE_STRATEGY_PRESET || 'balanced').toLowerCase();
 const preset = PROACTIVE_PRESETS[presetName] || PROACTIVE_PRESETS.balanced;
 
-const app = new WhatsAppClient({
-  headless: true,
-  ownerPhone: process.env.OWNER_PHONE || '',
-  pairingPhoneNumber: process.env.PAIRING_PHONE_NUMBER || '',
-  safeStartupMode: process.env.SAFE_STARTUP_MODE !== 'false',
-  safeStartupAllowAll: process.env.SAFE_STARTUP_ALLOW_ALL === 'true',
-  liveModeActive: process.env.BOT_LIVE_ON_START === 'true',
-  notifyOnlyCriticalClosing: process.env.NOTIFY_ONLY_CRITICAL_CLOSING !== 'false',
-  takeoverOwnerPingsEnabled: process.env.TAKEOVER_OWNER_PINGS === 'true',
-  criticalClosingGuardEnabled: process.env.CRITICAL_CLOSING_GUARD !== 'false',
-  criticalClosingGuardMinutes: envNum('CRITICAL_CLOSING_GUARD_MINUTES', 20),
-  criticalClosingGuardTone: (process.env.CRITICAL_CLOSING_GUARD_TONE || 'firm').toLowerCase(),
-  proactiveFollowupEnabled: process.env.PROACTIVE_FOLLOWUP_ENABLED === 'true',
-  proactiveInactivityMs: envNum('PROACTIVE_INACTIVITY_MINUTES', preset.inactivityMinutes.default_pause) * 60 * 1000,
-  proactiveInactivityByStatusMs: {
-    decision_pending: envNum('PROACTIVE_DECISION_PENDING_MINUTES', preset.inactivityMinutes.decision_pending) * 60 * 1000,
-    post_info_silence: envNum('PROACTIVE_POST_INFO_SILENCE_MINUTES', preset.inactivityMinutes.post_info_silence) * 60 * 1000,
-    negotiation_pause: envNum('PROACTIVE_NEGOTIATION_PAUSE_MINUTES', preset.inactivityMinutes.negotiation_pause) * 60 * 1000,
-    mid_funnel_pause: envNum('PROACTIVE_MID_FUNNEL_PAUSE_MINUTES', preset.inactivityMinutes.mid_funnel_pause) * 60 * 1000,
-    default_pause: envNum('PROACTIVE_DEFAULT_PAUSE_MINUTES', preset.inactivityMinutes.default_pause) * 60 * 1000,
+let app = null;
+
+const appBridge = {
+  getStatus: () => {
+    if (app && typeof app.getStatus === 'function') {
+      return app.getStatus();
+    }
+    return { ready: false, qrGenerated: false, pairingCodeGenerated: false };
   },
-  proactiveJitterByStatusMs: {
-    decision_pending: {
-      min: envNum('PROACTIVE_DECISION_PENDING_JITTER_MIN_MINUTES', preset.jitterMinutes.decision_pending.min) * 60 * 1000,
-      max: envNum('PROACTIVE_DECISION_PENDING_JITTER_MAX_MINUTES', preset.jitterMinutes.decision_pending.max) * 60 * 1000,
-    },
-    post_info_silence: {
-      min: envNum('PROACTIVE_POST_INFO_SILENCE_JITTER_MIN_MINUTES', preset.jitterMinutes.post_info_silence.min) * 60 * 1000,
-      max: envNum('PROACTIVE_POST_INFO_SILENCE_JITTER_MAX_MINUTES', preset.jitterMinutes.post_info_silence.max) * 60 * 1000,
-    },
-    negotiation_pause: {
-      min: envNum('PROACTIVE_NEGOTIATION_PAUSE_JITTER_MIN_MINUTES', preset.jitterMinutes.negotiation_pause.min) * 60 * 1000,
-      max: envNum('PROACTIVE_NEGOTIATION_PAUSE_JITTER_MAX_MINUTES', preset.jitterMinutes.negotiation_pause.max) * 60 * 1000,
-    },
-    mid_funnel_pause: {
-      min: envNum('PROACTIVE_MID_FUNNEL_PAUSE_JITTER_MIN_MINUTES', preset.jitterMinutes.mid_funnel_pause.min) * 60 * 1000,
-      max: envNum('PROACTIVE_MID_FUNNEL_PAUSE_JITTER_MAX_MINUTES', preset.jitterMinutes.mid_funnel_pause.max) * 60 * 1000,
-    },
-    default_pause: {
-      min: envNum('PROACTIVE_DEFAULT_JITTER_MIN_MINUTES', preset.jitterMinutes.default_pause.min) * 60 * 1000,
-      max: envNum('PROACTIVE_DEFAULT_JITTER_MAX_MINUTES', preset.jitterMinutes.default_pause.max) * 60 * 1000,
-    },
+  getQRData: () => {
+    if (app && typeof app.getQRData === 'function') {
+      return app.getQRData();
+    }
+    return '';
   },
-  proactiveAllowedStartHour: envNum('PROACTIVE_ALLOWED_START_HOUR', 8),
-  proactiveAllowedEndHour: envNum('PROACTIVE_ALLOWED_END_HOUR', 20),
-  proactiveWindowOpenJitterMinMs: envNum('PROACTIVE_WINDOW_OPEN_JITTER_MIN_MINUTES', preset.windowOpenJitterMinutes.min) * 60 * 1000,
-  proactiveWindowOpenJitterMaxMs: envNum('PROACTIVE_WINDOW_OPEN_JITTER_MAX_MINUTES', preset.windowOpenJitterMinutes.max) * 60 * 1000,
-  proactiveFollowupCheckMs: envNum('PROACTIVE_CHECK_SECONDS', 60) * 1000,
-  proactiveMaxAttemptsPerPause: envNum('PROACTIVE_MAX_ATTEMPTS', preset.maxAttempts),
-});
+  getPairingCode: () => {
+    if (app && typeof app.getPairingCode === 'function') {
+      return app.getPairingCode();
+    }
+    return '';
+  },
+  getPairingPhoneMasked: () => {
+    if (app && typeof app.getPairingPhoneMasked === 'function') {
+      return app.getPairingPhoneMasked();
+    }
+    return maskPhone(process.env.PAIRING_PHONE_NUMBER || '');
+  },
+  logout: async () => {
+    if (app && typeof app.logout === 'function') {
+      await app.logout();
+    }
+  },
+};
+
+function createWhatsAppClient() {
+  const WhatsAppClient = require('./whatsapp/client');
+  return new WhatsAppClient({
+    headless: true,
+    ownerPhone: process.env.OWNER_PHONE || '',
+    pairingPhoneNumber: process.env.PAIRING_PHONE_NUMBER || '',
+    safeStartupMode: process.env.SAFE_STARTUP_MODE !== 'false',
+    safeStartupAllowAll: process.env.SAFE_STARTUP_ALLOW_ALL === 'true',
+    liveModeActive: process.env.BOT_LIVE_ON_START === 'true',
+    notifyOnlyCriticalClosing: process.env.NOTIFY_ONLY_CRITICAL_CLOSING !== 'false',
+    takeoverOwnerPingsEnabled: process.env.TAKEOVER_OWNER_PINGS === 'true',
+    criticalClosingGuardEnabled: process.env.CRITICAL_CLOSING_GUARD !== 'false',
+    criticalClosingGuardMinutes: envNum('CRITICAL_CLOSING_GUARD_MINUTES', 20),
+    criticalClosingGuardTone: (process.env.CRITICAL_CLOSING_GUARD_TONE || 'firm').toLowerCase(),
+    proactiveFollowupEnabled: process.env.PROACTIVE_FOLLOWUP_ENABLED === 'true',
+    proactiveInactivityMs: envNum('PROACTIVE_INACTIVITY_MINUTES', preset.inactivityMinutes.default_pause) * 60 * 1000,
+    proactiveInactivityByStatusMs: {
+      decision_pending: envNum('PROACTIVE_DECISION_PENDING_MINUTES', preset.inactivityMinutes.decision_pending) * 60 * 1000,
+      post_info_silence: envNum('PROACTIVE_POST_INFO_SILENCE_MINUTES', preset.inactivityMinutes.post_info_silence) * 60 * 1000,
+      negotiation_pause: envNum('PROACTIVE_NEGOTIATION_PAUSE_MINUTES', preset.inactivityMinutes.negotiation_pause) * 60 * 1000,
+      mid_funnel_pause: envNum('PROACTIVE_MID_FUNNEL_PAUSE_MINUTES', preset.inactivityMinutes.mid_funnel_pause) * 60 * 1000,
+      default_pause: envNum('PROACTIVE_DEFAULT_PAUSE_MINUTES', preset.inactivityMinutes.default_pause) * 60 * 1000,
+    },
+    proactiveJitterByStatusMs: {
+      decision_pending: {
+        min: envNum('PROACTIVE_DECISION_PENDING_JITTER_MIN_MINUTES', preset.jitterMinutes.decision_pending.min) * 60 * 1000,
+        max: envNum('PROACTIVE_DECISION_PENDING_JITTER_MAX_MINUTES', preset.jitterMinutes.decision_pending.max) * 60 * 1000,
+      },
+      post_info_silence: {
+        min: envNum('PROACTIVE_POST_INFO_SILENCE_JITTER_MIN_MINUTES', preset.jitterMinutes.post_info_silence.min) * 60 * 1000,
+        max: envNum('PROACTIVE_POST_INFO_SILENCE_JITTER_MAX_MINUTES', preset.jitterMinutes.post_info_silence.max) * 60 * 1000,
+      },
+      negotiation_pause: {
+        min: envNum('PROACTIVE_NEGOTIATION_PAUSE_JITTER_MIN_MINUTES', preset.jitterMinutes.negotiation_pause.min) * 60 * 1000,
+        max: envNum('PROACTIVE_NEGOTIATION_PAUSE_JITTER_MAX_MINUTES', preset.jitterMinutes.negotiation_pause.max) * 60 * 1000,
+      },
+      mid_funnel_pause: {
+        min: envNum('PROACTIVE_MID_FUNNEL_PAUSE_JITTER_MIN_MINUTES', preset.jitterMinutes.mid_funnel_pause.min) * 60 * 1000,
+        max: envNum('PROACTIVE_MID_FUNNEL_PAUSE_JITTER_MAX_MINUTES', preset.jitterMinutes.mid_funnel_pause.max) * 60 * 1000,
+      },
+      default_pause: {
+        min: envNum('PROACTIVE_DEFAULT_JITTER_MIN_MINUTES', preset.jitterMinutes.default_pause.min) * 60 * 1000,
+        max: envNum('PROACTIVE_DEFAULT_JITTER_MAX_MINUTES', preset.jitterMinutes.default_pause.max) * 60 * 1000,
+      },
+    },
+    proactiveAllowedStartHour: envNum('PROACTIVE_ALLOWED_START_HOUR', 8),
+    proactiveAllowedEndHour: envNum('PROACTIVE_ALLOWED_END_HOUR', 20),
+    proactiveWindowOpenJitterMinMs: envNum('PROACTIVE_WINDOW_OPEN_JITTER_MIN_MINUTES', preset.windowOpenJitterMinutes.min) * 60 * 1000,
+    proactiveWindowOpenJitterMaxMs: envNum('PROACTIVE_WINDOW_OPEN_JITTER_MAX_MINUTES', preset.windowOpenJitterMinutes.max) * 60 * 1000,
+    proactiveFollowupCheckMs: envNum('PROACTIVE_CHECK_SECONDS', 60) * 1000,
+    proactiveMaxAttemptsPerPause: envNum('PROACTIVE_MAX_ATTEMPTS', preset.maxAttempts),
+  });
+}
 
 console.log(`[App] Preset de retomada ativa: ${presetName in PROACTIVE_PRESETS ? presetName : 'balanced'}`);
 
@@ -224,6 +260,9 @@ process.on('uncaughtException', (error) => {
 
 async function initializeWhatsApp() {
   setRuntimeState('initializing');
+  if (!app) {
+    app = createWhatsAppClient();
+  }
   await app.initialize();
   setRuntimeState('ready');
   console.log('[App] Bot aguardando mensagens no WhatsApp...');
@@ -236,7 +275,7 @@ async function initializeWhatsApp() {
     console.log('[App] Iniciando bot de vendas de brinquedos com WhatsApp...');
 
     pairingWeb = createPairingServer({
-      app,
+      app: appBridge,
       getRuntimeState: () => runtimeState,
       port: Number(process.env.PORT || 3000),
       enabled: process.env.WEB_PAIRING_ENABLED !== 'false',
@@ -254,7 +293,7 @@ async function initializeWhatsApp() {
     process.on('SIGINT', async () => {
       setRuntimeState('stopping');
       console.log('[App] Encerrando...');
-      await app.logout();
+      await appBridge.logout();
       if (pairingWeb) {
         await pairingWeb.stop();
       }
@@ -263,9 +302,8 @@ async function initializeWhatsApp() {
   } catch (err) {
     setRuntimeState('error', err.message);
     console.error('[App] Erro fatal:', err.message);
-    if (pairingWeb) {
-      await pairingWeb.stop().catch(() => {});
+    if (!pairingWeb) {
+      process.exit(1);
     }
-    process.exit(1);
   }
 })();
