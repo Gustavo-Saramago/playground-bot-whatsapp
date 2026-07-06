@@ -119,33 +119,29 @@ class WhatsAppClient {
       '--window-size=1280,900',
     ];
     
-    this.client = new Client({
-      authStrategy: new LocalAuth({ dataPath: this.options.authPath }),
-      puppeteer: {
-        headless: true,
-        dumpio: true,
-        args: chromiumArgs,
-        ...(chromeExecutablePath ? { executablePath: chromeExecutablePath } : {}),
-      },
-      ...(this.pairingPhoneNumber
-        ? {
-            pairWithPhoneNumber: {
-              phoneNumber: this.pairingPhoneNumber,
-              showNotification: false,
-              intervalMs: 180000,
-            },
-          }
-        : {}),
-    });
+    const buildClient = (usePairingCode) =>
+      new Client({
+        authStrategy: new LocalAuth({ dataPath: this.options.authPath }),
+        puppeteer: {
+          headless: true,
+          dumpio: true,
+          args: chromiumArgs,
+          ...(chromeExecutablePath ? { executablePath: chromeExecutablePath } : {}),
+        },
+        ...(usePairingCode && this.pairingPhoneNumber
+          ? {
+              pairWithPhoneNumber: {
+                phoneNumber: this.pairingPhoneNumber,
+                showNotification: false,
+                intervalMs: 180000,
+              },
+            }
+          : {}),
+      });
 
-    if (this.pairingPhoneNumber) {
-      console.log(`[WhatsApp] Pareamento por código ativo para: ${this._maskPhone(this.pairingPhoneNumber)}`);
-    } else {
-      console.log('[WhatsApp] PAIRING_PHONE_NUMBER nao definida. Portal exibira QR e nao codigo numerico.');
-    }
-
-    // Event: QR Code (para scan inicial)
-    this.client.on('qr', (qr) => {
+    const attachEvents = (client) => {
+      // Event: QR Code (para scan inicial)
+      client.on('qr', (qr) => {
       console.log('[WhatsApp] QR Code recebido');
       this.qrData = qr;
       qrcode.toFile(path.join(__dirname, '..', 'qr.png'), qr).catch(e => console.error(e));
@@ -163,37 +159,63 @@ class WhatsAppClient {
       console.log('[WhatsApp] QR salvo em qr.png — scan com seu celular');
     });
 
-    this.client.on('code', (code) => {
-      this.pairingCode = String(code || '');
-      console.log('[WhatsApp] Código de pareamento recebido:');
-      console.log(`[WhatsApp] ${this.pairingCode}`);
-    });
+      client.on('code', (code) => {
+        this.pairingCode = String(code || '');
+        console.log('[WhatsApp] Código de pareamento recebido:');
+        console.log(`[WhatsApp] ${this.pairingCode}`);
+      });
 
-    // Event: Pronto
-    this.client.on('ready', async () => {
-      this.ready = true;
-      await this._captureLegacyContacts();
-      console.log('[WhatsApp] ✅ Bot conectado e pronto!');
-      console.log(`[WhatsApp] Modo de atendimento: ${this.liveModeActive ? 'ATIVO' : 'SEGURO'}`);
-    });
+      // Event: Pronto
+      client.on('ready', async () => {
+        this.ready = true;
+        await this._captureLegacyContacts();
+        console.log('[WhatsApp] ✅ Bot conectado e pronto!');
+        console.log(`[WhatsApp] Modo de atendimento: ${this.liveModeActive ? 'ATIVO' : 'SEGURO'}`);
+      });
 
-    // Event: Mensagem recebida
-    this.client.on('message', async (msg) => {
-      try {
-        await this._enqueueIncomingMessage(msg);
-      } catch (err) {
-        console.error('[WhatsApp] Erro ao processar mensagem:', err.message);
+      // Event: Mensagem recebida
+      client.on('message', async (msg) => {
+        try {
+          await this._enqueueIncomingMessage(msg);
+        } catch (err) {
+          console.error('[WhatsApp] Erro ao processar mensagem:', err.message);
+        }
+      });
+
+      // Event: Desconectado
+      client.on('disconnected', () => {
+        this.ready = false;
+        this._pauseInboundPoller('desconectado');
+        console.log('[WhatsApp] ⚠️  Bot desconectado');
+      });
+    };
+
+    const initializeClient = async (usePairingCode) => {
+      this.client = buildClient(usePairingCode);
+      attachEvents(this.client);
+      await this.client.initialize();
+    };
+
+    if (this.pairingPhoneNumber) {
+      console.log(`[WhatsApp] Pareamento por código ativo para: ${this._maskPhone(this.pairingPhoneNumber)}`);
+    } else {
+      console.log('[WhatsApp] PAIRING_PHONE_NUMBER nao definida. Portal exibira QR e nao codigo numerico.');
+    }
+
+    try {
+      await initializeClient(!!this.pairingPhoneNumber);
+    } catch (err) {
+      const canFallbackToQrOnly = !!this.pairingPhoneNumber;
+      if (!canFallbackToQrOnly) {
+        throw err;
       }
-    });
 
-    // Event: Desconectado
-    this.client.on('disconnected', () => {
-      this.ready = false;
-      this._pauseInboundPoller('desconectado');
-      console.log('[WhatsApp] ⚠️  Bot desconectado');
-    });
-
-    await this.client.initialize();
+      console.error(`[WhatsApp] Falha no pareamento por código: ${err.message}`);
+      console.warn('[WhatsApp] Recuando automaticamente para modo QR-only para manter o servico online.');
+      this.pairingCode = '';
+      this.client = null;
+      await initializeClient(false);
+    }
     this._startProactiveFollowupScheduler();
     this._startInboundPoller();
   }
