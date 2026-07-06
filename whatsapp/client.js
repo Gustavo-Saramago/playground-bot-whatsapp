@@ -33,6 +33,9 @@ class WhatsAppClient {
     this.pairingPhoneNumber = this._normalizePhone(
       options.pairingPhoneNumber || process.env.PAIRING_PHONE_NUMBER || '',
     );
+    this.pairingCodeEnabled = String(options.pairingCodeEnabled ?? process.env.PAIRING_CODE_ENABLED ?? 'false')
+      .trim()
+      .toLowerCase() === 'true';
     this.pairingCode = '';
     this.liveModeActive = options.liveModeActive === true;
     this.options = {
@@ -196,16 +199,20 @@ class WhatsAppClient {
       await this.client.initialize();
     };
 
-    if (this.pairingPhoneNumber) {
+    const canUsePairingCode = this.pairingCodeEnabled && !!this.pairingPhoneNumber;
+
+    if (canUsePairingCode) {
       console.log(`[WhatsApp] Pareamento por código ativo para: ${this._maskPhone(this.pairingPhoneNumber)}`);
+    } else if (this.pairingPhoneNumber && !this.pairingCodeEnabled) {
+      console.log('[WhatsApp] Pareamento por codigo numerico desativado (PAIRING_CODE_ENABLED=false). Usando QR-only.');
     } else {
       console.log('[WhatsApp] PAIRING_PHONE_NUMBER nao definida. Portal exibira QR e nao codigo numerico.');
     }
 
     try {
-      await initializeClient(!!this.pairingPhoneNumber);
+      await initializeClient(canUsePairingCode);
     } catch (err) {
-      const canFallbackToQrOnly = !!this.pairingPhoneNumber;
+      const canFallbackToQrOnly = canUsePairingCode;
       if (!canFallbackToQrOnly) {
         throw err;
       }
