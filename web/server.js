@@ -99,12 +99,29 @@ function createPairingServer(options = {}) {
     const method = String(req.method || 'GET').toUpperCase();
     const url = String(req.url || '/').split('?')[0];
 
+    // Keep a public health endpoint for platform health checks.
+    if (method === 'GET' && url === '/health') {
+      res.writeHead(200, { 'Content-Type': 'application/json; charset=utf-8' });
+      res.end(JSON.stringify({ ok: true }));
+      return;
+    }
+
+    // Root stays public to avoid failing default health checks.
+    if (method === 'GET' && url === '/') {
+      res.writeHead(200, {
+        'Content-Type': 'application/json; charset=utf-8',
+        'Cache-Control': 'no-store',
+      });
+      res.end(JSON.stringify({ ok: true, service: 'pairing', path: '/pairing' }));
+      return;
+    }
+
     if (!isAuthorized(req)) {
       unauthorized(res);
       return;
     }
 
-    if (method === 'GET' && (url === '/' || url === '/pairing')) {
+    if (method === 'GET' && url === '/pairing') {
       let html = '';
       try {
         html = fs.readFileSync(indexFile, 'utf8');
@@ -128,12 +145,6 @@ function createPairingServer(options = {}) {
         'Cache-Control': 'no-store',
       });
       res.end(JSON.stringify(getPairingSnapshot()));
-      return;
-    }
-
-    if (method === 'GET' && url === '/health') {
-      res.writeHead(200, { 'Content-Type': 'application/json; charset=utf-8' });
-      res.end(JSON.stringify({ ok: true }));
       return;
     }
 
