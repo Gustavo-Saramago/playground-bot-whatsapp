@@ -9,6 +9,7 @@
     "bot:on": "powershell -ExecutionPolicy Bypass -File ./scripts/bot-on.ps1",
     "bot:off": "powershell -ExecutionPolicy Bypass -File ./scripts/bot-off.ps1",
     "bot:status": "powershell -ExecutionPolicy Bypass -File ./scripts/bot-status.ps1",
+    "test:allow": "powershell -ExecutionPolicy Bypass -File ./scripts/test-allow.ps1",
     "test": "node test.js"
   },
   "dependencies": {
