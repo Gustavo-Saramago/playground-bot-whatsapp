@@ -6,6 +6,9 @@
   "scripts": {
     "start": "node start.js",
     "start:safe": "powershell -ExecutionPolicy Bypass -File ./scripts/start-safe.ps1",
+    "bot:on": "powershell -ExecutionPolicy Bypass -File ./scripts/bot-on.ps1",
+    "bot:off": "powershell -ExecutionPolicy Bypass -File ./scripts/bot-off.ps1",
+    "bot:status": "powershell -ExecutionPolicy Bypass -File ./scripts/bot-status.ps1",
     "test": "node test.js"
   },
   "dependencies": {

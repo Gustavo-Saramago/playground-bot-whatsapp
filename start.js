@@ -192,6 +192,7 @@ function createWhatsAppClient() {
     ownerPhone: process.env.OWNER_PHONE || '',
     pairingPhoneNumber: process.env.PAIRING_PHONE_NUMBER || '',
     safeStartupMode: process.env.SAFE_STARTUP_MODE !== 'false',
+    processOfflineBacklogOnReady: process.env.PROCESS_OFFLINE_BACKLOG_ON_START !== 'false',
     safeStartupAllowAll: process.env.SAFE_STARTUP_ALLOW_ALL === 'true',
     liveModeActive: process.env.BOT_LIVE_ON_START === 'true',
     notifyOnlyCriticalClosing: process.env.NOTIFY_ONLY_CRITICAL_CLOSING !== 'false',

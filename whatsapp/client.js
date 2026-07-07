@@ -24,6 +24,8 @@ class WhatsAppClient {
     this.manualTakeovers = new Map();
     this.legacyManualContacts = new Set();
     this.inboundPollBootAtMs = Date.now();
+    this.backlogSyncInProgress = false;
+    this.backlogSyncDone = false;
     this.testAllowedContactsPath = options.testAllowedContactsPath || path.join(__dirname, '..', 'test-allowed-contacts.json');
     this.testAllowedContacts = this._loadTestAllowedContacts();
     this.mediaCatalog = this._loadMediaCatalog();
@@ -87,6 +89,7 @@ class WhatsAppClient {
       safeStartupMode: options.safeStartupMode !== false,
       proactiveSkipStages: options.proactiveSkipStages || ['fechamento'],
       inboxPollEnabled: options.inboxPollEnabled !== false,
+      processOfflineBacklogOnReady: options.processOfflineBacklogOnReady !== false,
       inboxPollIntervalMs: options.inboxPollIntervalMs || 4000,
       inboxPollRecentWindowMs: options.inboxPollRecentWindowMs || 15 * 60 * 1000,
       inboundDedupeWindowMs: options.inboundDedupeWindowMs || 20 * 60 * 1000,
@@ -187,6 +190,7 @@ class WhatsAppClient {
       client.on('ready', async () => {
         this.ready = true;
         await this._captureLegacyContacts();
+        await this._processUnreadBacklogOnBoot();
         console.log('[WhatsApp] ✅ Bot conectado e pronto!');
         console.log(`[WhatsApp] Modo de atendimento: ${this.liveModeActive ? 'ATIVO' : 'SEGURO'}`);
       });
@@ -289,7 +293,7 @@ class WhatsAppClient {
     const isBootBacklogMessage = hasValidTimestamp
       && msgTsMs < (this.inboundPollBootAtMs - this.options.inboundPollBootSkewMs)
       && (nowMs - msgTsMs) > this.options.inboxPollRecentWindowMs;
-    if (isBootBacklogMessage) {
+    if (isBootBacklogMessage && !this.options.processOfflineBacklogOnReady) {
       console.log('[WhatsApp] Mensagem antiga ignorada no boot/reconexão.');
       return;
     }
@@ -3465,6 +3469,56 @@ class WhatsAppClient {
     }, this.options.inboxPollIntervalMs);
 
     console.log('[WhatsApp] Poller de inbox inicializado');
+  }
+
+  async _processUnreadBacklogOnBoot() {
+    if (!this.options.processOfflineBacklogOnReady || !this.client) {
+      return;
+    }
+
+    this.backlogSyncInProgress = true;
+    let chatsWithUnread = 0;
+    let handledMessages = 0;
+
+    try {
+      const chats = await this.client.getChats();
+
+      for (const chat of chats) {
+        const serialized = String(chat?.id?._serialized || '');
+        if (!serialized.endsWith('@c.us') && !serialized.endsWith('@lid')) {
+          continue;
+        }
+
+        const unreadCount = Number(chat?.unreadCount || 0);
+        if (!Number.isFinite(unreadCount) || unreadCount <= 0) {
+          continue;
+        }
+
+        chatsWithUnread += 1;
+        const limit = Math.min(Math.max(unreadCount + 10, 30), 500);
+        const fetched = await chat.fetchMessages({ limit });
+        const inbound = fetched
+          .filter((msg) => !!msg && !msg.fromMe)
+          .sort((a, b) => Number(a?.timestamp || 0) - Number(b?.timestamp || 0));
+
+        const targetMessages = inbound.slice(-Math.max(unreadCount, 1));
+        for (const msg of targetMessages) {
+          await this._enqueueIncomingMessage(msg);
+          handledMessages += 1;
+        }
+      }
+
+      if (chatsWithUnread > 0) {
+        console.log(`[WhatsApp] Backlog processado no boot: ${handledMessages} mensagem(ns) em ${chatsWithUnread} conversa(s).`);
+      } else {
+        console.log('[WhatsApp] Nenhuma mensagem pendente para processar no boot.');
+      }
+    } catch (err) {
+      console.error('[WhatsApp] Falha ao processar backlog pendente no boot:', err.message);
+    } finally {
+      this.backlogSyncInProgress = false;
+      this.backlogSyncDone = true;
+    }
   }
 
   async _pollInboundMessages() {
