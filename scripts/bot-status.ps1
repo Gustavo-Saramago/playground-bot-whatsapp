@@ -2,8 +2,8 @@ $ErrorActionPreference = "Stop"
 
 $projectRoot = (Resolve-Path (Join-Path $PSScriptRoot "..")).Path
 $statusFiles = @(
-  @{ Path = Join-Path $projectRoot ".bot-test.pid"; Label = "TESTE" },
-  @{ Path = Join-Path $projectRoot ".bot.pid"; Label = "PRODUCAO" }
+  @{ Path = (Join-Path $projectRoot ".bot-test.pid"); Label = "TESTE" },
+  @{ Path = (Join-Path $projectRoot ".bot.pid"); Label = "PRODUCAO" }
 )
 
 foreach ($item in $statusFiles) {

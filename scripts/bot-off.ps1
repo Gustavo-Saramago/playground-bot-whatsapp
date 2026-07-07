@@ -2,8 +2,8 @@ $ErrorActionPreference = "Stop"
 
 $projectRoot = (Resolve-Path (Join-Path $PSScriptRoot "..")).Path
 $pidFiles = @(
-  Join-Path $projectRoot ".bot.pid",
-  Join-Path $projectRoot ".bot-test.pid"
+  (Join-Path $projectRoot ".bot.pid"),
+  (Join-Path $projectRoot ".bot-test.pid")
 )
 
 $stoppedAny = $false
