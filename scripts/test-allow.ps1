@@ -8,8 +8,13 @@ function Normalize-Phone([string]$value) {
 }
 
 if ($args.Count -eq 0) {
-  Write-Output 'Uso: powershell -ExecutionPolicy Bypass -File .\scripts\test-allow.ps1 5511999999999 5511888888888'
-  exit 1
+  $enteredPhones = Read-Host 'Digite os numeros separados por espaco ou virgula'
+  if ([string]::IsNullOrWhiteSpace($enteredPhones)) {
+    Write-Output 'Nenhum telefone informado.'
+    exit 1
+  }
+
+  $args = @($enteredPhones -split '[,\s]+' | Where-Object { -not [string]::IsNullOrWhiteSpace($_) })
 }
 
 $phones = New-Object System.Collections.Generic.List[string]
