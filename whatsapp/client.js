@@ -1966,16 +1966,6 @@ class WhatsAppClient {
       };
     }
 
-    if (!this.options.safeStartupMode) {
-      return {
-        allowed: true,
-        reason: 'safe_startup_off',
-        convertToManual: false,
-        matchedTest: false,
-        matchedLegacy: false,
-      };
-    }
-
     const matchedTest = this._setHasPhone(this.testAllowedContacts, phone)
       || this._setHasAnyPhone(this.testAllowedContacts, candidates);
     if (matchedTest) {
@@ -1988,39 +1978,40 @@ class WhatsAppClient {
       };
     }
 
-    const matchedLegacy = this._setHasPhone(this.legacyManualContacts, phone)
-      || this._setHasAnyPhone(this.legacyManualContacts, candidates);
-    if (matchedLegacy) {
-      return {
-        allowed: false,
-        reason: 'legacy_manual_contact',
-        convertToManual: false,
-        matchedTest: false,
-        matchedLegacy: true,
-      };
-    }
-
-    if (!this.liveModeActive) {
-      return {
-        allowed: false,
-        reason: 'safe_mode_inactive',
-        convertToManual: true,
-        matchedTest: false,
-        matchedLegacy: false,
-      };
-    }
+    const hasConversationContext = this._hasConversationContext(phone, candidates);
 
     return {
       allowed: true,
-      reason: 'new_live_contact',
+      reason: hasConversationContext ? 'ongoing_conversation' : 'new_contact',
       convertToManual: false,
       matchedTest: false,
       matchedLegacy: false,
     };
   }
 
+  _hasConversationContext(phone, candidates = []) {
+    const candidatePhones = [phone, ...candidates].filter(Boolean);
+    if (candidatePhones.length === 0) {
+      return false;
+    }
+
+    if (!bot.dialog || typeof bot.dialog.getState !== 'function') {
+      return false;
+    }
+
+    for (const candidate of candidatePhones) {
+      const state = bot.dialog.getState(candidate);
+      const history = Array.isArray(state?.history) ? state.history : [];
+      if (history.length > 0) {
+        return true;
+      }
+    }
+
+    return false;
+  }
+
   async _captureLegacyContacts() {
-    if (!this.options.safeStartupMode || !this.client) {
+    if (!this.client) {
       return;
     }
 
