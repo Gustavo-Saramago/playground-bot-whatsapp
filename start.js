@@ -74,6 +74,7 @@ const startupHealth = {
   fallback_authorized: allowFallbackRuntime,
   safe_startup_mode: isTrue(process.env.SAFE_STARTUP_MODE),
   bot_live_on_start: isTrue(process.env.BOT_LIVE_ON_START),
+  bot_test_only_on_start: isTrue(process.env.BOT_TEST_ONLY),
   critical_closing_guard: process.env.CRITICAL_CLOSING_GUARD !== 'false',
   owner_phone: maskPhone(process.env.OWNER_PHONE || ''),
 };
@@ -195,6 +196,7 @@ function createWhatsAppClient() {
     processOfflineBacklogOnReady: process.env.PROCESS_OFFLINE_BACKLOG_ON_START !== 'false',
     safeStartupAllowAll: process.env.SAFE_STARTUP_ALLOW_ALL === 'true',
     liveModeActive: process.env.BOT_LIVE_ON_START === 'true',
+    testOnlyMode: process.env.BOT_TEST_ONLY === 'true',
     notifyOnlyCriticalClosing: process.env.NOTIFY_ONLY_CRITICAL_CLOSING !== 'false',
     takeoverOwnerPingsEnabled: process.env.TAKEOVER_OWNER_PINGS === 'true',
     criticalClosingGuardEnabled: process.env.CRITICAL_CLOSING_GUARD !== 'false',

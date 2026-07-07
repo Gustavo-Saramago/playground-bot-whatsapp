@@ -40,6 +40,7 @@ class WhatsAppClient {
       .toLowerCase() === 'true';
     this.pairingCode = '';
     this.liveModeActive = options.liveModeActive === true;
+    this.testOnlyMode = options.testOnlyMode === true;
     this.options = {
       authPath: options.authPath || path.join(__dirname, '..', '.wwebjs_auth'),
       headless: options.headless !== false,
@@ -192,7 +193,7 @@ class WhatsAppClient {
         await this._captureLegacyContacts();
         await this._processUnreadBacklogOnBoot();
         console.log('[WhatsApp] ✅ Bot conectado e pronto!');
-        console.log(`[WhatsApp] Modo de atendimento: ${this.liveModeActive ? 'ATIVO' : 'SEGURO'}`);
+        console.log(`[WhatsApp] Modo de atendimento: ${this.testOnlyMode ? 'TESTE FECHADO' : (this.liveModeActive ? 'ATIVO' : 'SEGURO')}`);
       });
 
       // Event: Mensagem recebida
@@ -1968,6 +1969,27 @@ class WhatsAppClient {
 
     const matchedTest = this._setHasPhone(this.testAllowedContacts, phone)
       || this._setHasAnyPhone(this.testAllowedContacts, candidates);
+
+    if (this.testOnlyMode) {
+      if (!matchedTest) {
+        return {
+          allowed: false,
+          reason: 'test_mode_only',
+          convertToManual: false,
+          matchedTest: false,
+          matchedLegacy: false,
+        };
+      }
+
+      return {
+        allowed: true,
+        reason: 'test_allowed',
+        convertToManual: false,
+        matchedTest: true,
+        matchedLegacy: false,
+      };
+    }
+
     if (matchedTest) {
       return {
         allowed: true,
@@ -2917,8 +2939,9 @@ class WhatsAppClient {
     }
 
     if (cmd === '/modo') {
+      const modeLabel = this.testOnlyMode ? 'TESTE FECHADO' : (this.liveModeActive ? 'ATIVO' : 'SEGURO');
       const response = [
-        `Modo do bot: ${this.liveModeActive ? 'ATIVO' : 'SEGURO'}`,
+        `Modo do bot: ${modeLabel}`,
         `Contatos legados manuais: ${this.legacyManualContacts.size}`,
         `Numeros liberados para atendimento: ${this.testAllowedContacts.size}`,
       ].join('\n');
@@ -2949,7 +2972,8 @@ class WhatsAppClient {
     }
 
     if (cmd === '/relatorio') {
-      await this._sendMessage(ownerReplyTarget, this._buildConversationReport());
+      const modeLabel = this.testOnlyMode ? 'TESTE FECHADO' : (this.liveModeActive ? 'ATIVO' : 'SEGURO');
+      await this._sendMessage(ownerReplyTarget, `${this._buildConversationReport()}\nModo do bot: ${modeLabel}`);
       return;
     }
 
